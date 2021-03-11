@@ -8,11 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
+    
+    let cocktails = CocktailsManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        cocktails.performRequest(with: "https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list")
     }
 
 
