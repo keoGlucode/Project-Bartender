@@ -21,7 +21,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1045" y="114"/>
+            <point key="canvasLocation" x="-387" y="840"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="uGC-Th-wZC">
+            <objects>
+                <viewController id="PaO-MK-aHp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UV1-xa-q1v">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Jfg-VP-IjR"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="OlI-CX-ZYS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cCk-11-LO3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="435" y="840"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="MHX-Kk-04u">
@@ -34,6 +50,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="j8i-eD-PqJ"/>
+                        <segue destination="PaO-MK-aHp" kind="relationship" relationship="viewControllers" id="voO-XL-7uc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4es-Lk-B0A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
