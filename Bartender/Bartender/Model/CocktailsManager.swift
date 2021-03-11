@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+struct CocktailsManager {
+    
+    let categoryURL = "https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list"
+    
+    func performRequest(with urlString : String) {
+        
+    }
+}
