@@ -14,5 +14,32 @@ struct CocktailsManager {
     
     func performRequest(with urlString : String) {
         
+        if let url = URL(string: urlString) {
+            
+            let session = URLSession(configuration: .default)
+            
+            let task = session.dataTask(with: url) { (data, response, error) in
+                
+                if error != nil {
+                    print(error!.localizedDescription)
+                    return
+                }
+                
+                if let safeData = data {
+                    
+                }
+            }
+        }
+    }
+    
+    func parseJson(cocktailData : Data) {
+        let decoder = JSONDecoder()
+        
+        do {
+            let decodedData = try decoder.decode(<#T##type: Decodable.Protocol##Decodable.Protocol#>, from: <#T##Data#>)
+        }
+        catch {
+            
+        }
     }
 }
