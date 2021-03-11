@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Cocktails-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Bartender" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,13 +17,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="dJa-Ig-6Jj"/>
+                    <tabBarItem key="tabBarItem" title="Cocktails" image="burn" catalog="system" id="dJa-Ig-6Jj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-387" y="840"/>
         </scene>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="uGC-Th-wZC">
             <objects>
                 <viewController id="PaO-MK-aHp" sceneMemberID="viewController">
@@ -33,7 +33,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Jfg-VP-IjR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="OlI-CX-ZYS"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="OlI-CX-ZYS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCk-11-LO3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -58,4 +58,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="burn" catalog="system" width="128" height="121"/>
+    </resources>
 </document>
