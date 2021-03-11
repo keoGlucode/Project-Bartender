@@ -27,19 +27,30 @@ struct CocktailsManager {
                 
                 if let safeData = data {
                     
+                    if let category = self.parseJson(cocktailData: safeData) {
+                        print("yay")
+                        print(category)
+                    }
                 }
             }
+            
+            task.resume()
         }
     }
     
-    func parseJson(cocktailData : Data) {
+    func parseJson(cocktailData : Data) -> CocktailData? {
+        
         let decoder = JSONDecoder()
         
         do {
-            let decodedData = try decoder.decode(<#T##type: Decodable.Protocol##Decodable.Protocol#>, from: <#T##Data#>)
+            let decodedData = try decoder.decode(CocktailData.self, from: cocktailData)
+            
+            print(decodedData.drinks[0])
+            
+            return decodedData
         }
         catch {
-            
+            return nil
         }
     }
 }
