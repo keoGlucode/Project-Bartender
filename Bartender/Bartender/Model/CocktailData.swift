@@ -15,3 +15,13 @@ struct CocktailData: Decodable {
 struct Category: Decodable {
     let strCategory : String
 }
+
+struct CocktailDetails : Decodable {
+    let drinks : [Details]
+}
+
+struct Details : Decodable {
+    //let idDrinks : Int
+    let strDrink : String
+    //let strDrinkThumb : String
+}
