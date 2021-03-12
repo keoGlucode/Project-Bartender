@@ -10,13 +10,11 @@ import Foundation
 
 struct CocktailsManager {
     
-    //var categories : CocktailData
-    
-    let categoryURL = "https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list"
-    
-    func performRequest(with urlString : String) {
+    func performRequest() {
         
-        if let url = URL(string: urlString) {
+        let categoryURL = "https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list"
+        
+        if let url = URL(string: categoryURL) {
             
             let session = URLSession(configuration: .default)
             
