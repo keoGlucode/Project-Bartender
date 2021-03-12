@@ -15,7 +15,7 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cocktails.performRequest(with: "https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list")
+        cocktails.performRequest()
     }
 
 
