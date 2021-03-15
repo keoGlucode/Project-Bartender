@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct CocktailsManager {
+class CocktailsManager {
     
-    var catergories : CocktailData
+    var catergories = CocktailData()
     
-    mutating func performRequest(completed: @escaping () -> () ) {
+    func performRequest(completed: @escaping () -> () ) {
         
         let categoryURL = "https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list"
         

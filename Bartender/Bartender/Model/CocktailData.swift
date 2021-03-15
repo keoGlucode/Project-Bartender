@@ -8,14 +8,16 @@
 
 import Foundation
 
-class CocktailData: Decodable {
-    var drinks : [Category]
+struct CocktailData: Codable {
+    
+    var drinks = [Category]()
 }
 
-struct Category: Decodable {
+struct Category: Codable {
     var strCategory : String
 }
 
+/*
 struct CocktailDetails : Decodable {
     let drinks : [Details]
 }
@@ -24,4 +26,4 @@ struct Details : Decodable {
     //let idDrinks : Int
     let strDrink : String
     //let strDrinkThumb : String
-}
+}*/
