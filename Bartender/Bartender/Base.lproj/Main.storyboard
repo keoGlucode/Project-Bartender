@@ -61,15 +61,18 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qAe-ia-hYq">
                                             <rect key="frame" x="16" y="11" width="343" height="103"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKN-qM-97J">
-                                                    <rect key="frame" x="130" y="22" width="83" height="58"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKN-qM-97J">
+                                                    <rect key="frame" x="130" y="22.5" width="83" height="58"/>
                                                     <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="36"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="FKN-qM-97J" firstAttribute="centerY" secondItem="qAe-ia-hYq" secondAttribute="centerY" id="ATs-oj-jqx"/>
+                                                <constraint firstItem="FKN-qM-97J" firstAttribute="centerX" secondItem="qAe-ia-hYq" secondAttribute="centerX" id="aYW-Vx-emW"/>
+                                            </constraints>
                                         </view>
                                     </subviews>
                                     <constraints>

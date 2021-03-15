@@ -10,12 +10,12 @@ import UIKit
 
 class CategoryTableViewController: UITableViewController {
     
-    var cocktails = CocktailsManager(catergories: <#CocktailData#>)
+    var cocktails = CocktailsManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cocktails.performRequest(completed: <#() -> ()#>)
+        cocktails.performRequest(completed: self.tableView.reloadData)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -28,7 +28,14 @@ class CategoryTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        let category = cocktails.catergories.drinks[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! CategoryTableViewCell
+        
+        cell.categoryLabel.text = category.strCategory
+        
+        return cell
     }
 }
 
