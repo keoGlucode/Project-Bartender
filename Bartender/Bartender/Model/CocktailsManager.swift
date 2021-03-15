@@ -10,7 +10,9 @@ import Foundation
 
 struct CocktailsManager {
     
-    func performRequest() {
+    var catergories : CocktailData
+    
+    mutating func performRequest(completed: @escaping () -> () ) {
         
         let categoryURL = "https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list"
         
@@ -27,10 +29,16 @@ struct CocktailsManager {
                 
                 if let safeData = data {
                     
-                    if let category = self.parseJson(cocktailData: safeData) {
+                    do {
+                        self.catergories = try JSONDecoder().decode(CocktailData.self, from: safeData)
                         
-                        print(category.drinks.count)
                         
+                        DispatchQueue.main.async {
+                            completed()
+                            
+                        }
+                    }catch {
+                        print("Error with JSON \(error.localizedDescription)")
                     }
                 }
             }
@@ -39,22 +47,24 @@ struct CocktailsManager {
         }
     }
     
-     func parseJson(cocktailData : Data) -> CocktailData? {
+    /*mutating func parseJson(cocktailData : Data) -> CocktailData? {
         
         let decoder = JSONDecoder()
         
         do {
-            let decodedData = try decoder.decode(CocktailData.self, from: cocktailData)
+            catergories = try decoder.decode(CocktailData.self, from: cocktailData)
             
             
             
-            return decodedData
+            return catergories
         }
         catch {
             return nil
         }
-    }
+    }*/
     
+    
+    /*
     mutating func setCategories(category : CocktailData) {
         //categories = category
     }
@@ -101,6 +111,6 @@ struct CocktailsManager {
         catch {
             return nil
         }
-    }
+    }*/
     
 }
