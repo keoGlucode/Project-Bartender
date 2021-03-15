@@ -51,18 +51,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" rowHeight="125" id="Gdm-iI-9oC" customClass="CategoryTableViewCell" customModule="Bartender" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="125"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" rowHeight="219.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gdm-iI-9oC" customClass="CategoryTableViewCell" customModule="Bartender" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="219.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gdm-iI-9oC" id="eCe-Ht-kRV">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="219.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qAe-ia-hYq">
-                                            <rect key="frame" x="16" y="11" width="343" height="103"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="219.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKN-qM-97J">
-                                                    <rect key="frame" x="130" y="22.5" width="83" height="58"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKN-qM-97J">
+                                                    <rect key="frame" x="20" y="80" width="83" height="59.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="83" id="w9r-5g-bEC"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="36"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -70,16 +73,18 @@
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
-                                                <constraint firstItem="FKN-qM-97J" firstAttribute="centerY" secondItem="qAe-ia-hYq" secondAttribute="centerY" id="ATs-oj-jqx"/>
-                                                <constraint firstItem="FKN-qM-97J" firstAttribute="centerX" secondItem="qAe-ia-hYq" secondAttribute="centerX" id="aYW-Vx-emW"/>
+                                                <constraint firstItem="FKN-qM-97J" firstAttribute="centerY" secondItem="qAe-ia-hYq" secondAttribute="centerY" id="UTR-7l-EQT"/>
+                                                <constraint firstItem="FKN-qM-97J" firstAttribute="leading" secondItem="qAe-ia-hYq" secondAttribute="leading" constant="20" id="dI2-3G-pVw"/>
+                                                <constraint firstItem="FKN-qM-97J" firstAttribute="top" secondItem="qAe-ia-hYq" secondAttribute="top" constant="80" id="iEh-Dj-5i9"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FKN-qM-97J" secondAttribute="trailing" constant="20" symbolic="YES" id="jlX-bg-8vJ"/>
                                             </constraints>
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="qAe-ia-hYq" firstAttribute="leading" secondItem="eCe-Ht-kRV" secondAttribute="leadingMargin" id="UaE-Gt-02Y"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="qAe-ia-hYq" secondAttribute="trailing" id="WcW-R9-iHQ"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="qAe-ia-hYq" secondAttribute="bottom" id="aFj-dO-x15"/>
-                                        <constraint firstItem="qAe-ia-hYq" firstAttribute="top" secondItem="eCe-Ht-kRV" secondAttribute="topMargin" id="i7W-Nf-E1b"/>
+                                        <constraint firstItem="qAe-ia-hYq" firstAttribute="leading" secondItem="eCe-Ht-kRV" secondAttribute="leading" id="2DN-OB-1fY"/>
+                                        <constraint firstItem="qAe-ia-hYq" firstAttribute="top" secondItem="eCe-Ht-kRV" secondAttribute="top" id="Ka0-RK-ncP"/>
+                                        <constraint firstAttribute="trailing" secondItem="qAe-ia-hYq" secondAttribute="trailing" id="QD1-OD-43O"/>
+                                        <constraint firstAttribute="bottom" secondItem="qAe-ia-hYq" secondAttribute="bottom" id="hPs-ym-aOd"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
