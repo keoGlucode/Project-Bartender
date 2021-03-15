@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct CocktailData: Decodable {
-    let drinks : [Category]
+class CocktailData: Decodable {
+    var drinks : [Category]
 }
 
 struct Category: Decodable {
-    let strCategory : String
+    var strCategory : String
 }
 
 struct CocktailDetails : Decodable {
