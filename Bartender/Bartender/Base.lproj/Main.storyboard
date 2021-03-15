@@ -60,6 +60,15 @@
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qAe-ia-hYq">
                                             <rect key="frame" x="16" y="11" width="343" height="103"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKN-qM-97J">
+                                                    <rect key="frame" x="130" y="22" width="83" height="58"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="36"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         </view>
                                     </subviews>
@@ -70,6 +79,9 @@
                                         <constraint firstItem="qAe-ia-hYq" firstAttribute="top" secondItem="eCe-Ht-kRV" secondAttribute="topMargin" id="i7W-Nf-E1b"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="categoryLabel" destination="FKN-qM-97J" id="SMr-0E-zxr"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
