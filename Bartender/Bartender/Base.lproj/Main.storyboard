@@ -23,6 +23,35 @@
             </objects>
             <point key="canvasLocation" x="614" y="840"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="ESW-PJ-UrH">
+            <objects>
+                <tableViewController id="tGI-su-Wi0" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JWG-10-Ont">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="eIC-oY-IIM">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eIC-oY-IIM" id="GOI-W5-V0O">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tGI-su-Wi0" id="YxH-90-2EM"/>
+                            <outlet property="delegate" destination="tGI-su-Wi0" id="Lxv-oB-q5b"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="re7-L9-jdf"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z6l-vq-Lnc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1377" y="847"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="MHX-Kk-04u">
             <objects>
@@ -36,6 +65,7 @@
                     <connections>
                         <segue destination="srr-F0-msS" kind="relationship" relationship="viewControllers" id="RJf-Qr-yoe"/>
                         <segue destination="PaO-MK-aHp" kind="relationship" relationship="viewControllers" id="voO-XL-7uc"/>
+                        <segue destination="tGI-su-Wi0" kind="relationship" relationship="viewControllers" id="cEM-EK-f9w"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4es-Lk-B0A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
