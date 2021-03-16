@@ -12,6 +12,8 @@ class CocktailsManager {
     
     var catergories = CocktailData()
     
+    var drinks = CocktailDetails()
+    
     func performRequest(completed: @escaping () -> () ) {
         
         let categoryURL = "https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list"
@@ -64,10 +66,8 @@ class CocktailsManager {
     }*/
     
     
-    /*
-    mutating func setCategories(category : CocktailData) {
-        //categories = category
-    }
+    
+
     
     func performDrinksRequest(urlString: String) {
         
@@ -84,7 +84,7 @@ class CocktailsManager {
                 
                 if let safeData = data {
                     
-                    if let drinks = self.parseJson(cocktailData: safeData) {
+                    if let drinks = self.parseDrinksJson(cocktailData: safeData) {
                         
                         print(drinks)
                         
@@ -111,6 +111,6 @@ class CocktailsManager {
         catch {
             return nil
         }
-    }*/
+    }
     
 }

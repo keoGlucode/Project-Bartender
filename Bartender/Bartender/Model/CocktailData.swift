@@ -17,13 +17,13 @@ struct Category: Codable {
     var strCategory : String
 }
 
-/*
-struct CocktailDetails : Decodable {
-    let drinks : [Details]
+
+struct CocktailDetails : Codable {
+    let drinks = [Details]()
 }
 
-struct Details : Decodable {
+struct Details : Codable {
     //let idDrinks : Int
     let strDrink : String
     //let strDrinkThumb : String
-}*/
+}
