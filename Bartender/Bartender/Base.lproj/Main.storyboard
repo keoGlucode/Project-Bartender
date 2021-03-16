@@ -21,7 +21,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCk-11-LO3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="614" y="840"/>
+            <point key="canvasLocation" x="1552.8" y="839.73013493253382"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="ESW-PJ-UrH">
@@ -50,7 +50,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z6l-vq-Lnc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1377" y="847"/>
+            <point key="canvasLocation" x="2316" y="846.9265367316342"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="MHX-Kk-04u">
@@ -63,7 +63,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="srr-F0-msS" kind="relationship" relationship="viewControllers" id="RJf-Qr-yoe"/>
+                        <segue destination="zuH-ET-U7h" kind="relationship" relationship="viewControllers" id="RJf-Qr-yoe"/>
                         <segue destination="PaO-MK-aHp" kind="relationship" relationship="viewControllers" id="voO-XL-7uc"/>
                         <segue destination="tGI-su-Wi0" kind="relationship" relationship="viewControllers" id="cEM-EK-f9w"/>
                     </connections>
@@ -72,7 +72,7 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
         </scene>
-        <!--Cocktails-->
+        <!--Category Table View Controller-->
         <scene sceneID="5Aa-cP-g8i">
             <objects>
                 <tableViewController id="srr-F0-msS" customClass="CategoryTableViewController" customModule="Bartender" customModuleProvider="target" sceneMemberID="viewController">
@@ -127,9 +127,28 @@
                             <outlet property="delegate" destination="srr-F0-msS" id="QFu-60-Zvc"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Cocktails" image="burn" catalog="system" id="48W-Ox-BPH"/>
+                    <navigationItem key="navigationItem" id="fen-EV-Tc5"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fxf-Kr-soq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="589.60000000000002" y="839.73013493253382"/>
+        </scene>
+        <!--Cocktails-->
+        <scene sceneID="YzT-Fk-WR7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zuH-ET-U7h" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cocktails" image="burn" catalog="system" id="48W-Ox-BPH"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0nF-wV-bDd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="srr-F0-msS" kind="relationship" relationship="rootViewController" id="XdF-Ia-JnX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DDt-Dg-Bhc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-349.60000000000002" y="839.73013493253382"/>
         </scene>
