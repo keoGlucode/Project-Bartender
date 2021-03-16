@@ -69,7 +69,9 @@ class CocktailsManager {
     
 
     
-    func performDrinksRequest(urlString: String) {
+    func performDrinksRequest(stringAppend: String, completed: @escaping () -> () ) {
+        
+        let urlString = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail"
         
         if let url = URL(string: urlString) {
             
@@ -84,11 +86,16 @@ class CocktailsManager {
                 
                 if let safeData = data {
                     
-                    if let drinks = self.parseDrinksJson(cocktailData: safeData) {
+                    do {
+                        self.drinks = try JSONDecoder().decode(CocktailDetails.self, from: safeData)
                         
-                        print(drinks)
-                        
-                        
+                        print(self.drinks)
+                        DispatchQueue.main.async {
+                            completed()
+                            
+                        }
+                    }catch {
+                        print("Error with JSON \(error.localizedDescription)")
                     }
                 }
             }
@@ -97,7 +104,7 @@ class CocktailsManager {
         }
     }
     
-     func parseDrinksJson(cocktailData : Data) -> CocktailDetails? {
+    /* func parseDrinksJson(cocktailData : Data) -> CocktailDetails? {
         
         let decoder = JSONDecoder()
         
@@ -111,6 +118,6 @@ class CocktailsManager {
         catch {
             return nil
         }
-    }
+    }*/
     
 }

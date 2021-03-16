@@ -19,11 +19,11 @@ struct Category: Codable {
 
 
 struct CocktailDetails : Codable {
-    let drinks = [Details]()
+    var drinks = [Details]()
 }
 
 struct Details : Codable {
-    //let idDrinks : Int
-    let strDrink : String
-    //let strDrinkThumb : String
+    var idDrink : String
+    var strDrink : String
+    var strDrinkThumb : String
 }
