@@ -15,7 +15,9 @@ class CocktailsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        cocktailItem.performDrinksRequest(urlString: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink")
+        cocktailItem.performDrinksRequest(stringAppend: "yah neh", completed: self.tableView.reloadData)
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -30,12 +32,31 @@ class CocktailsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return cocktailItem.drinks.drinks.count
+        return 1
     }
 
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return cocktailItem.drinks.drinks.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let category = cocktailItem.drinks.drinks[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "drinksCell", for: indexPath)
+        
+        cell.textLabel?.text = category.strDrink
+        
+        
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let title = cocktailItem.drinks.drinks[indexPath.row]
     }
 
     /*

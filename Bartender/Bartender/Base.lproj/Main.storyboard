@@ -23,21 +23,41 @@
             </objects>
             <point key="canvasLocation" x="1552.8" y="839.73013493253382"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Cocktails Table View Controller-->
         <scene sceneID="ESW-PJ-UrH">
             <objects>
-                <tableViewController id="tGI-su-Wi0" sceneMemberID="viewController">
+                <tableViewController id="tGI-su-Wi0" customClass="CocktailsTableViewController" customModule="Bartender" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JWG-10-Ont">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="eIC-oY-IIM">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="drinksCell" textLabel="jy7-oc-pfg" detailTextLabel="kNO-xE-VNU" imageView="vhP-le-6pu" style="IBUITableViewCellStyleValue1" id="eIC-oY-IIM">
                                 <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eIC-oY-IIM" id="GOI-W5-V0O">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jy7-oc-pfg">
+                                            <rect key="frame" x="55" y="12" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kNO-xE-VNU">
+                                            <rect key="frame" x="315" y="12" width="44" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="square.and.arrow.down" catalog="system" id="vhP-le-6pu">
+                                            <rect key="frame" x="18.5" y="11.5" width="19" height="20"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -72,7 +92,7 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
         </scene>
-        <!--Category Table View Controller-->
+        <!--Categories-->
         <scene sceneID="5Aa-cP-g8i">
             <objects>
                 <tableViewController id="srr-F0-msS" customClass="CategoryTableViewController" customModule="Bartender" customModuleProvider="target" sceneMemberID="viewController">
@@ -127,7 +147,7 @@
                             <outlet property="delegate" destination="srr-F0-msS" id="QFu-60-Zvc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="fen-EV-Tc5"/>
+                    <navigationItem key="navigationItem" title="Categories" id="fen-EV-Tc5"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fxf-Kr-soq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -155,5 +175,6 @@
     </scenes>
     <resources>
         <image name="burn" catalog="system" width="128" height="121"/>
+        <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
     </resources>
 </document>
