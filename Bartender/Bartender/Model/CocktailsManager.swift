@@ -6,7 +6,7 @@
 //  Copyright © 2021 Glucode. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class CocktailsManager {
     
@@ -142,4 +142,11 @@ class CocktailsManager {
         }
     }*/
     
+}
+
+
+extension UIImageView {
+    func loadImages(urlString : String) {
+        
+    }
 }
