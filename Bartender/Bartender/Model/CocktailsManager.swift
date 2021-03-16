@@ -71,10 +71,12 @@ class CocktailsManager {
     
     func performDrinksRequest(stringAppend: String, completed: @escaping () -> () ) {
         
-        let urlString = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail"
+        let correctString = manageString(categoryName: stringAppend)
+        
+        let urlString = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=\(correctString)"
         
         if let url = URL(string: urlString) {
-            
+            print("we here")
             let session = URLSession(configuration: .default)
             
             let task = session.dataTask(with: url) { (data, response, error) in
@@ -102,6 +104,26 @@ class CocktailsManager {
             
             task.resume()
         }
+    }
+    
+    func manageString(categoryName : String) -> String {
+        switch categoryName {
+        case "Ordinary Drink":
+            return "Ordinary_Drink"
+        case "Milk / Float / Shake" :
+            return "Milk%20/%20Float%20/%20Shake"
+        case "Coffee / Tea":
+            return "Coffee%20/%20Tea"
+        case "Homemade Liqueur":
+            return "Homemade%20Liqueur"
+        case "Punch / Party Drink" :
+            return "Punch%20/%20Party%20Drink"
+        case "Soft Drink / Soda":
+            return "Soft%20Drink%20/%20Soda"
+        default:
+            return categoryName
+        }
+            
     }
     
     /* func parseDrinksJson(cocktailData : Data) -> CocktailDetails? {

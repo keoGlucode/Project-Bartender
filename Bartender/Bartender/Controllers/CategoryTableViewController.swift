@@ -42,6 +42,12 @@ class CategoryTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let title = cocktails.catergories.drinks[indexPath.row].strCategory
+        
+        let vc = CocktailsTableViewController()
+        
+        vc.categoryItem = title
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     

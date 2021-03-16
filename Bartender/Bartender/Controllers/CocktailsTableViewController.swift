@@ -11,7 +11,7 @@ import UIKit
 class CocktailsTableViewController: UITableViewController {
 
     var cocktailItem = CocktailsManager()
-    var categoryItem = String()
+    var categoryItem = "Ordinary_Drink"
     
     
     override func viewDidLoad() {
