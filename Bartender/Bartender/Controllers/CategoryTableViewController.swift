@@ -46,6 +46,7 @@ class CategoryTableViewController: UITableViewController {
         let vc = CocktailsTableViewController()
         
         vc.categoryItem = title
+        vc.navigationItem.title = title
         
         navigationController?.pushViewController(vc, animated: true)
     }
