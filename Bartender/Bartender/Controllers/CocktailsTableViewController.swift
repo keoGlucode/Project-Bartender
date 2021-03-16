@@ -10,21 +10,27 @@ import UIKit
 
 class CocktailsTableViewController: UITableViewController {
 
+    var cocktailItem = CocktailsManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        cocktailItem.performDrinksRequest(urlString: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return cocktailItem.drinks.drinks.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
