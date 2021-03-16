@@ -144,9 +144,34 @@ class CocktailsManager {
     
 }
 
+//global variable for image cache
+var imageCache = NSCache<NSString, UIImage>()
+
 
 extension UIImageView {
     func loadImages(urlString : String) {
         
+        if let image = imageCache.object(forKey: urlString as NSString) {
+            self.image = image
+            return
+        }
+        
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let unwrappedImage = UIImage(data: data) {
+                    
+                    imageCache.setObject(unwrappedImage, forKey: urlString as NSString)
+                    
+                    DispatchQueue.main.async {
+                        self?.image = unwrappedImage
+                    }
+                }
+            }
+            
+        }
     }
 }
