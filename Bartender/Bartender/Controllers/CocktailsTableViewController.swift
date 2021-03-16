@@ -52,7 +52,7 @@ class CocktailsTableViewController: UITableViewController {
         
         cell.textLabel?.text = category.strDrink
         
-        
+        cell.imageView?.image = .add
         
         return cell
     }
