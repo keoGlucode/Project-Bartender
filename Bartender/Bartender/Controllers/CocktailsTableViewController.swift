@@ -11,11 +11,13 @@ import UIKit
 class CocktailsTableViewController: UITableViewController {
 
     var cocktailItem = CocktailsManager()
+    var categoryItem = String()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        cocktailItem.performDrinksRequest(stringAppend: "yah neh", completed: self.tableView.reloadData)
+        cocktailItem.performDrinksRequest(stringAppend: categoryItem, completed: self.tableView.reloadData)
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -23,9 +25,11 @@ class CocktailsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "drinksCell")
         
         tableView.delegate = self
         tableView.dataSource = self
+        
     }
 
     // MARK: - Table view data source
@@ -53,11 +57,13 @@ class CocktailsTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+   /* override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let title = cocktailItem.drinks.drinks[indexPath.row]
-    }
+        
+
+    }*/
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

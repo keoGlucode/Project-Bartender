@@ -97,8 +97,8 @@
 		29AD4FD925FA24F800E88D88 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				295AEAEF25F7606F007569BC /* CategoryTableViewController.swift */,
 				29AD03D6260088BC005D915A /* CocktailsTableViewController.swift */,
+				295AEAEF25F7606F007569BC /* CategoryTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
