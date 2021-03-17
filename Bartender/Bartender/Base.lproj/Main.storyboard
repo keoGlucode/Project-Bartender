@@ -80,19 +80,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9em-hH-nzr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9em-hH-nzr">
                                 <rect key="frame" x="87" y="76" width="200" height="50"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BjO-BH-k5h">
+                                <rect key="frame" x="67" y="183" width="240" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="1PQ-Kb-X9N"/>
+                                    <constraint firstAttribute="height" constant="300" id="chg-JA-K1W"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="9em-hH-nzr" firstAttribute="top" secondItem="aBk-VY-g3P" secondAttribute="top" constant="76" id="IXR-rO-dtY"/>
-                            <constraint firstItem="9em-hH-nzr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aBk-VY-g3P" secondAttribute="leading" constant="50" id="RJ4-0r-L51"/>
-                            <constraint firstItem="aBk-VY-g3P" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9em-hH-nzr" secondAttribute="trailing" constant="9" id="k1v-gm-Q8d"/>
-                            <constraint firstItem="9em-hH-nzr" firstAttribute="centerX" secondItem="aBk-VY-g3P" secondAttribute="centerX" constant="-0.5" id="l32-nw-BHv"/>
+                            <constraint firstItem="BjO-BH-k5h" firstAttribute="leading" secondItem="aBk-VY-g3P" secondAttribute="leading" constant="67" id="JXr-oS-wXN"/>
+                            <constraint firstItem="aBk-VY-g3P" firstAttribute="trailing" secondItem="BjO-BH-k5h" secondAttribute="trailing" constant="-307" id="K2h-Ha-wMO"/>
+                            <constraint firstItem="9em-hH-nzr" firstAttribute="leading" secondItem="aBk-VY-g3P" secondAttribute="leading" constant="87" id="RJ4-0r-L51"/>
+                            <constraint firstItem="BjO-BH-k5h" firstAttribute="top" secondItem="9em-hH-nzr" secondAttribute="bottom" constant="57.5" id="dkE-i1-fDe"/>
+                            <constraint firstItem="aBk-VY-g3P" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9em-hH-nzr" secondAttribute="trailing" constant="-287" id="k1v-gm-Q8d"/>
+                            <constraint firstItem="9em-hH-nzr" firstAttribute="centerX" secondItem="aBk-VY-g3P" secondAttribute="centerX" constant="187" id="l32-nw-BHv"/>
+                            <constraint firstItem="BjO-BH-k5h" firstAttribute="centerY" secondItem="667-p1-W9x" secondAttribute="centerY" id="wP5-f1-dRy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aBk-VY-g3P"/>
                     </view>
