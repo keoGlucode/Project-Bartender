@@ -15,6 +15,7 @@
 		295AEAF825F76071007569BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 295AEAF625F76071007569BC /* LaunchScreen.storyboard */; };
 		29AD03D525FF52B6005D915A /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AD03D425FF52B6005D915A /* CategoryTableViewCell.swift */; };
 		29AD03D7260088BC005D915A /* CocktailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AD03D6260088BC005D915A /* CocktailsTableViewController.swift */; };
+		29AD03D92602148E005D915A /* DrinkAttributesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AD03D82602148E005D915A /* DrinkAttributesViewController.swift */; };
 		29AD4FDB25FA268F00E88D88 /* CocktailsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AD4FDA25FA268F00E88D88 /* CocktailsManager.swift */; };
 		29AD4FDD25FA5FD400E88D88 /* CocktailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AD4FDC25FA5FD400E88D88 /* CocktailData.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +31,7 @@
 		295AEAF925F76071007569BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29AD03D425FF52B6005D915A /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		29AD03D6260088BC005D915A /* CocktailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsTableViewController.swift; sourceTree = "<group>"; };
+		29AD03D82602148E005D915A /* DrinkAttributesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkAttributesViewController.swift; sourceTree = "<group>"; };
 		29AD4FDA25FA268F00E88D88 /* CocktailsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsManager.swift; sourceTree = "<group>"; };
 		29AD4FDC25FA5FD400E88D88 /* CocktailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +101,7 @@
 			children = (
 				29AD03D6260088BC005D915A /* CocktailsTableViewController.swift */,
 				295AEAEF25F7606F007569BC /* CategoryTableViewController.swift */,
+				29AD03D82602148E005D915A /* DrinkAttributesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				29AD4FDB25FA268F00E88D88 /* CocktailsManager.swift in Sources */,
 				295AEAEC25F7606F007569BC /* AppDelegate.swift in Sources */,
 				295AEAEE25F7606F007569BC /* SceneDelegate.swift in Sources */,
+				29AD03D92602148E005D915A /* DrinkAttributesViewController.swift in Sources */,
 				29AD03D7260088BC005D915A /* CocktailsTableViewController.swift in Sources */,
 				29AD4FDD25FA5FD400E88D88 /* CocktailData.swift in Sources */,
 				29AD03D525FF52B6005D915A /* CategoryTableViewCell.swift in Sources */,
