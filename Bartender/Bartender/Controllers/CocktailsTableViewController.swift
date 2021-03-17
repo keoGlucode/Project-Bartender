@@ -61,6 +61,16 @@ class CocktailsTableViewController: UITableViewController {
         performSegue(withIdentifier: "viewDrinksDetails", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let destination = segue.destination as? DrinkAttributesViewController {
+            
+            let drink = cocktailItem.drinks.drinks[(tableView.indexPathForSelectedRow?.row)!]
+            
+            
+        }
+    }
+    
    /* override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
