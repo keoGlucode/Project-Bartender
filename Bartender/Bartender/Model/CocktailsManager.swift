@@ -76,7 +76,7 @@ class CocktailsManager {
         let urlString = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=\(correctString)"
         
         if let url = URL(string: urlString) {
-            print("we here")
+            
             let session = URLSession(configuration: .default)
             
             let task = session.dataTask(with: url) { (data, response, error) in
@@ -91,7 +91,7 @@ class CocktailsManager {
                     do {
                         self.drinks = try JSONDecoder().decode(CocktailDetails.self, from: safeData)
                         
-                        print(self.drinks)
+                        
                         DispatchQueue.main.async {
                             completed()
                             
