@@ -72,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="2260" y="875"/>
         </scene>
-        <!--View Controller-->
+        <!--Drink Attributes View Controller-->
         <scene sceneID="oF9-p5-H96">
             <objects>
-                <viewController id="g2t-jD-v8h" sceneMemberID="viewController">
+                <viewController id="g2t-jD-v8h" customClass="DrinkAttributesViewController" customModule="Bartender" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="667-p1-W9x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
