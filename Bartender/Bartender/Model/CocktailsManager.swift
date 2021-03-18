@@ -131,7 +131,7 @@ class CocktailsManager {
     
     func performDrinksAttributesRequest(stringAppend: String, completed: @escaping () -> () ) {
         
-        let urlString = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=\(stringAppend)"
+        let urlString = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=11007"
         
         if let url = URL(string: urlString) {
             
@@ -147,6 +147,7 @@ class CocktailsManager {
                 if let safeData = data {
                     
                     do {
+                        
                         self.drinksDetails = try JSONDecoder().decode(DrinkDetails.self, from: safeData)
                         
                         
