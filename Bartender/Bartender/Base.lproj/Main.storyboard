@@ -59,6 +59,9 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="g2t-jD-v8h" kind="show" identifier="viewDrinksDetails" id="oNR-Xt-Ge1"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -67,9 +70,6 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" systemItem="search" id="re7-L9-jdf"/>
-                    <connections>
-                        <segue destination="g2t-jD-v8h" kind="show" identifier="viewDrinksDetails" id="Aac-Yo-reS"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z6l-vq-Lnc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -109,10 +109,14 @@
                         <viewLayoutGuide key="safeArea" id="aBk-VY-g3P"/>
                     </view>
                     <navigationItem key="navigationItem" id="lAt-9i-vEA"/>
+                    <connections>
+                        <outlet property="drinkImage" destination="BjO-BH-k5h" id="ofS-zD-cVd"/>
+                        <outlet property="drinkLabel" destination="9em-hH-nzr" id="jUn-A1-7Pj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ToK-IG-4vg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3453.5999999999999" y="872.11394302848578"/>
+            <point key="canvasLocation" x="3327" y="875"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="MHX-Kk-04u">
