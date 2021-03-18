@@ -33,6 +33,7 @@ struct DrinkDetails : Codable {
 }
 
 struct DrinkAttributes : Codable {
-    var strAlcoholic : String
-    var strInstructions : String
+    var idDrink : String?
+    var strAlcoholic : String?
+    var strInstructions : String?
 }
