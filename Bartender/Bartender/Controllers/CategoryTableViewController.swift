@@ -49,6 +49,7 @@ class CategoryTableViewController: UITableViewController {
         vc.navigationItem.title = title
         
         navigationController?.pushViewController(vc, animated: true)
+
     }
     
     
