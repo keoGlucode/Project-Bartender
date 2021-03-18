@@ -9,22 +9,31 @@
 import UIKit
 
 class DrinkAttributesViewController: UIViewController {
-
+    
+    @IBOutlet weak var drinkLabel: UILabel!
+    
+    
+    @IBOutlet weak var drinkImage: UIImageView!
+    
+    var drinks = CocktailsManager()
+    var drinkID = "11007"
+    var drink_Image = UIImage()
+    var drinkName = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        drinks.performDrinksAttributesRequest(stringAppend: drinkID, completed: setLabels)
+        
+        //drinkLabel.text = drinkName
+        //drinkImage.image = drink_Image
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    func setLabels() {
+        print("setting labels")
     }
-    */
 
+    
 }
