@@ -28,18 +28,18 @@ struct Details : Codable {
     var strDrink : String
     var strDrinkThumb : String
 }
-/*
+
 struct DrinkDetails : Codable {
-    var drinks = [DrinkAttributes]()
+    var drinks : [DrinkAttributes]
 }
 
 struct DrinkAttributes : Codable {
-    var idDrink : String?
-    var strAlcoholic : String?
-    var strInstructions : String?
-}*/
+    var idDrink : String
+    var strAlcoholic : String
+    var strInstructions : String
+}
 
-struct Cocktails: Codable {
+struct CocktailAttributes: Codable {
     
     let drinks : [Drink]
 }

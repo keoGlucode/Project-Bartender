@@ -141,7 +141,9 @@ class CocktailsManager {
     
     func performDrinksAttributesRequest(stringAppend: String, completed: @escaping () -> () ) {
         
-        let urlString = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=11007"
+        let urlString = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=\(stringAppend)"
+        
+        
         
         if let url = URL(string: urlString) {
             
@@ -158,8 +160,9 @@ class CocktailsManager {
                     
                     do {
                         
-                        self.drinksDetails = try JSONDecoder().decode([Drink].self, from: safeData)
+                        let att = try JSONDecoder().decode(CocktailAttributes.self, from: safeData)
                         
+                        self.drinksDetails = att.drinks
                         
                         DispatchQueue.main.async {
                             completed()
