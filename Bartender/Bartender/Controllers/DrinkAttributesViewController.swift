@@ -16,23 +16,24 @@ class DrinkAttributesViewController: UIViewController {
     @IBOutlet weak var drinkImage: UIImageView!
     
     var drinks = CocktailsManager()
-    var drinkID = "11007"
-    var drink_Image = UIImage()
+    var drinkID = ""
+    var drink_Image = ""
     var drinkName = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         drinks.performDrinksAttributesRequest(stringAppend: drinkID, completed: setLabels)
         
-        drinkLabel.text = drinkName
-        drinkImage.image = drink_Image
+
     }
     
     
     
     func setLabels() {
-        print("setting labels")
+        drinkLabel.text = drinkName
+        drinkImage.loadImages(urlString: drink_Image)
     }
 
     

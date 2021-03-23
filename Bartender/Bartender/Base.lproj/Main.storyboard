@@ -80,19 +80,19 @@
         <scene sceneID="oF9-p5-H96">
             <objects>
                 <viewController id="g2t-jD-v8h" customClass="DrinkAttributesViewController" customModule="Bartender" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="667-p1-W9x">
+                    <view key="view" contentMode="scaleToFill" id="667-p1-W9x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BjO-BH-k5h">
-                                <rect key="frame" x="67" y="193" width="240" height="300"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hourglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BjO-BH-k5h">
+                                <rect key="frame" x="67" y="184.5" width="241" height="297.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="1PQ-Kb-X9N"/>
-                                    <constraint firstAttribute="height" constant="300" id="chg-JA-K1W"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="1PQ-Kb-X9N"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="chg-JA-K1W"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9em-hH-nzr">
-                                <rect key="frame" x="67" y="106" width="240" height="50"/>
+                                <rect key="frame" x="67" y="507" width="240" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -101,11 +101,11 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="9em-hH-nzr" firstAttribute="top" secondItem="aBk-VY-g3P" secondAttribute="top" constant="20" id="IXR-rO-dtY"/>
+                            <constraint firstItem="BjO-BH-k5h" firstAttribute="centerX" secondItem="667-p1-W9x" secondAttribute="centerX" id="4Nc-tm-4tD"/>
                             <constraint firstItem="BjO-BH-k5h" firstAttribute="leading" secondItem="aBk-VY-g3P" secondAttribute="leading" constant="67" id="JXr-oS-wXN"/>
-                            <constraint firstItem="BjO-BH-k5h" firstAttribute="top" secondItem="9em-hH-nzr" secondAttribute="bottom" constant="79" id="dkE-i1-fDe"/>
-                            <constraint firstItem="9em-hH-nzr" firstAttribute="centerX" secondItem="aBk-VY-g3P" secondAttribute="centerX" constant="-0.25" id="l32-nw-BHv"/>
-                            <constraint firstItem="BjO-BH-k5h" firstAttribute="centerY" secondItem="667-p1-W9x" secondAttribute="centerY" constant="-14.5" id="wP5-f1-dRy"/>
+                            <constraint firstItem="aBk-VY-g3P" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="BjO-BH-k5h" secondAttribute="bottom" constant="45" id="eDv-B4-J7w"/>
+                            <constraint firstItem="BjO-BH-k5h" firstAttribute="top" relation="greaterThanOrEqual" secondItem="aBk-VY-g3P" secondAttribute="top" constant="20" id="veK-eu-iAM"/>
+                            <constraint firstItem="BjO-BH-k5h" firstAttribute="centerY" secondItem="667-p1-W9x" secondAttribute="centerY" id="wP5-f1-dRy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aBk-VY-g3P"/>
                     </view>
@@ -349,6 +349,7 @@
         <segue reference="1MB-kE-mlC"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="hourglass" catalog="system" width="109" height="128"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
         <image name="wp3638577-bartender-wallpapers" width="1570" height="1047"/>
