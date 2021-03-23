@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -80,18 +81,18 @@
             <objects>
                 <viewController id="g2t-jD-v8h" customClass="DrinkAttributesViewController" customModule="Bartender" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" ambiguous="YES" id="667-p1-W9x">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BjO-BH-k5h">
-                                <rect key="frame" x="67" y="169" width="240" height="300"/>
+                                <rect key="frame" x="67" y="193" width="240" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="1PQ-Kb-X9N"/>
                                     <constraint firstAttribute="height" constant="300" id="chg-JA-K1W"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9em-hH-nzr">
-                                <rect key="frame" x="67" y="40" width="240" height="50"/>
+                                <rect key="frame" x="67" y="106" width="240" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -100,7 +101,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="9em-hH-nzr" firstAttribute="top" secondItem="aBk-VY-g3P" secondAttribute="top" constant="40" id="IXR-rO-dtY"/>
+                            <constraint firstItem="9em-hH-nzr" firstAttribute="top" secondItem="aBk-VY-g3P" secondAttribute="top" constant="20" id="IXR-rO-dtY"/>
                             <constraint firstItem="BjO-BH-k5h" firstAttribute="leading" secondItem="aBk-VY-g3P" secondAttribute="leading" constant="67" id="JXr-oS-wXN"/>
                             <constraint firstItem="BjO-BH-k5h" firstAttribute="top" secondItem="9em-hH-nzr" secondAttribute="bottom" constant="79" id="dkE-i1-fDe"/>
                             <constraint firstItem="9em-hH-nzr" firstAttribute="centerX" secondItem="aBk-VY-g3P" secondAttribute="centerX" constant="-0.25" id="l32-nw-BHv"/>
@@ -116,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ToK-IG-4vg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3327" y="875"/>
+            <point key="canvasLocation" x="2260" y="1773"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="MHX-Kk-04u">
@@ -193,10 +194,136 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Categories" id="fen-EV-Tc5"/>
+                    <connections>
+                        <segue destination="Ibg-zA-UgA" kind="show" identifier="showDrinks" id="rGx-7a-log"/>
+                        <segue destination="1Hn-ce-F8P" kind="show" identifier="listDrinks" id="QxO-1P-oI1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fxf-Kr-soq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-271" y="875"/>
+        </scene>
+        <!--List Table View Controller-->
+        <scene sceneID="eOf-lV-MEz">
+            <objects>
+                <tableViewController id="1Hn-ce-F8P" customClass="ListTableViewController" customModule="Bartender" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qxi-Af-5J8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListCell" rowHeight="176" id="b3A-vf-t8u" customClass="ListTableViewCell" customModule="Bartender" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="176"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b3A-vf-t8u" id="F39-UG-5V2">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="176"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NM9-dt-qwb">
+                                            <rect key="frame" x="53" y="33" width="81" height="111"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="111" id="JOA-MS-Zhp"/>
+                                                <constraint firstAttribute="width" constant="81" id="R5h-b1-cC5"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Km-g3-v2D">
+                                            <rect key="frame" x="166" y="78" width="43.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="4Km-g3-v2D" firstAttribute="top" secondItem="F39-UG-5V2" secondAttribute="top" constant="78" id="M4W-kz-frN"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4Km-g3-v2D" secondAttribute="trailing" constant="20" id="RmE-KS-gfh"/>
+                                        <constraint firstItem="NM9-dt-qwb" firstAttribute="leading" secondItem="F39-UG-5V2" secondAttribute="leading" constant="53" id="bJH-Le-hjO"/>
+                                        <constraint firstItem="NM9-dt-qwb" firstAttribute="top" secondItem="F39-UG-5V2" secondAttribute="top" constant="33" id="iJh-VJ-BXh"/>
+                                        <constraint firstItem="4Km-g3-v2D" firstAttribute="leading" secondItem="NM9-dt-qwb" secondAttribute="trailing" constant="32" id="sWi-P1-iGm"/>
+                                        <constraint firstAttribute="bottom" secondItem="NM9-dt-qwb" secondAttribute="bottom" constant="32" id="zvf-eu-Xxk"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="listImage" destination="NM9-dt-qwb" id="YUp-xy-va2"/>
+                                    <outlet property="listLabel" destination="4Km-g3-v2D" id="wh4-iu-z0y"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1Hn-ce-F8P" id="kog-Or-yIw"/>
+                            <outlet property="delegate" destination="1Hn-ce-F8P" id="Dum-xv-7Bt"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="DY8-Sc-WTM"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DWJ-9W-T0t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1082.4000000000001" y="1775.2623688155923"/>
+        </scene>
+        <!--List Collection View Controller-->
+        <scene sceneID="eej-Wi-uAY">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="Ibg-zA-UgA" customClass="ListCollectionViewController" customModule="Bartender" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="b3u-1H-Lsy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jgr-RO-Gu7">
+                            <size key="itemSize" width="171" height="315"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ListCollectionViewCell" reuseIdentifier="ListCollectionViewCell" id="R5J-1Z-q3l" customClass="ListCollectionViewCell" customModule="Bartender" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="171" height="315"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HZE-k8-XyQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="171" height="315"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wp3638577-bartender-wallpapers" translatesAutoresizingMaskIntoConstraints="NO" id="bcv-Ez-JL7">
+                                            <rect key="frame" x="0.0" y="0.0" width="171" height="250"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqB-WZ-F5o">
+                                            <rect key="frame" x="8" y="255" width="155" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="2OS-gc-n6g"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="dqB-WZ-F5o" secondAttribute="bottom" id="17w-Yi-bNh"/>
+                                        <constraint firstItem="dqB-WZ-F5o" firstAttribute="top" secondItem="bcv-Ez-JL7" secondAttribute="bottom" constant="5" id="5wL-xQ-kI3"/>
+                                        <constraint firstItem="bcv-Ez-JL7" firstAttribute="top" secondItem="HZE-k8-XyQ" secondAttribute="top" id="7lB-6O-E30"/>
+                                        <constraint firstItem="bcv-Ez-JL7" firstAttribute="leading" secondItem="HZE-k8-XyQ" secondAttribute="leading" id="Bfz-OI-uc7"/>
+                                        <constraint firstAttribute="trailing" secondItem="bcv-Ez-JL7" secondAttribute="trailing" id="H8p-F9-OZb"/>
+                                        <constraint firstAttribute="trailing" secondItem="dqB-WZ-F5o" secondAttribute="trailing" constant="8" id="hCJ-j9-CrU"/>
+                                        <constraint firstItem="dqB-WZ-F5o" firstAttribute="leading" secondItem="HZE-k8-XyQ" secondAttribute="leading" constant="8" id="lNE-Nx-6bu"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="171" height="315"/>
+                                <connections>
+                                    <outlet property="drinkImageView" destination="bcv-Ez-JL7" id="M9H-e1-6bo"/>
+                                    <outlet property="drinkLabel" destination="dqB-WZ-F5o" id="xSg-xX-FrQ"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Ibg-zA-UgA" id="gUT-yJ-vbe"/>
+                            <outlet property="delegate" destination="Ibg-zA-UgA" id="uc5-AW-veN"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="2bu-JX-EIb"/>
+                    <connections>
+                        <segue destination="g2t-jD-v8h" kind="show" identifier="viewAttributes" id="1MB-kE-mlC"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kJd-f2-5bc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-271.19999999999999" y="1772.5637181409297"/>
         </scene>
         <!--Categories-->
         <scene sceneID="YzT-Fk-WR7">
@@ -218,8 +345,12 @@
             <point key="canvasLocation" x="-1058" y="875"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="1MB-kE-mlC"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
+        <image name="wp3638577-bartender-wallpapers" width="1570" height="1047"/>
     </resources>
 </document>

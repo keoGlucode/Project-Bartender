@@ -11,6 +11,7 @@ import UIKit
 class CategoryTableViewController: UITableViewController {
     
     var cocktails = CocktailsManager()
+    var cat = "mxm"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +25,12 @@ class CategoryTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cocktails.catergories.drinks.count
+        return cocktails.datas.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let category = cocktails.catergories.drinks[indexPath.row]
+        let category = cocktails.datas[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! CategoryTableViewCell
         
@@ -39,17 +40,34 @@ class CategoryTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
         
-        let title = cocktails.catergories.drinks[indexPath.row].strCategory
+        performSegue(withIdentifier: "showDrinks", sender: self)
         
-        let vc = CocktailsTableViewController()
         
-        vc.categoryItem = title
-        vc.navigationItem.title = title
-        
-        navigationController?.pushViewController(vc, animated: true)
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let destination = segue.destination as? ListCollectionViewController {
+            
+            guard let selectedRow = tableView.indexPathForSelectedRow?.row else { return }
+            destination.categoryItem = cocktails.datas[selectedRow].strCategory ?? "Beer"
+            
+                //cocktails.performDrinksRequest(stringAppend: cocktails.datas[selectedRow].strCategory ?? "Beer", completed: printSomething)
+            
+            //destination.drinkItem = cocktails.drinks
+            //print("really")
+            //print(cocktails.drinks)
+            
+        }
+    }
+    
+    func printSomething() {
+        print("request done")
+        //print(cocktails.drinks)
+        
+        
     }
     
     
