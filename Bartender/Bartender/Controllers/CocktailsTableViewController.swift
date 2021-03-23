@@ -17,7 +17,7 @@ class CocktailsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        cocktailItem.performDrinksRequest(stringAppend: categoryItem, completed: self.tableView.reloadData)
+        //cocktailItem.performDrinksRequest(stringAppend: categoryItem, completed: self.tableView.reloadData)
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -41,12 +41,12 @@ class CocktailsTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cocktailItem.drinks.drinks.count
+        return cocktailItem.datas.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let category = cocktailItem.drinks.drinks[indexPath.row]
+        let category = cocktailItem.drinks[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "drinksCell", for: indexPath)
         
@@ -72,7 +72,7 @@ class CocktailsTableViewController: UITableViewController {
         
         if let destination = segue.destination as? DrinkAttributesViewController {
             
-            let drink = cocktailItem.drinks.drinks[(tableView.indexPathForSelectedRow?.row)!]
+            let drink = cocktailItem.drinks[(tableView.indexPathForSelectedRow?.row)!]
             
             destination.drinkImage.loadImages(urlString: drink.strDrinkThumb)
             

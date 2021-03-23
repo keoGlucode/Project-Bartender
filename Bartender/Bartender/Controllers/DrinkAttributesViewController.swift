@@ -25,8 +25,8 @@ class DrinkAttributesViewController: UIViewController {
         
         drinks.performDrinksAttributesRequest(stringAppend: drinkID, completed: setLabels)
         
-        //drinkLabel.text = drinkName
-        //drinkImage.image = drink_Image
+        drinkLabel.text = drinkName
+        drinkImage.image = drink_Image
     }
     
     
