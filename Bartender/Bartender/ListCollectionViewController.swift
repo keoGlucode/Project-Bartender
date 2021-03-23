@@ -67,7 +67,7 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(drinkItem.count)
+        
         return drinkItem.count > 0 ? drinkItem.count : 0
     }
 
@@ -80,12 +80,9 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
     }
     
     func printResult()  {
-        //print(serviceCall.drinks)
-        print("Loaded information")
-        //drinkItem = serviceCall.drinks
-        //print(drinkItem)
+
         self.collectionView.reloadData()
-        //self.collectionView.collectionViewLayout.invalidateLayout()
+
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -165,13 +162,12 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
       
       if let destination = segue.destination as? DrinkAttributesViewController {
           
-        let drink = drinkItem[(collectionView.indexPathsForSelectedItems?.startIndex)!]
+        let drink = drinkItem[( collectionView.indexPathsForSelectedItems![0].row)]
           
         destination.drinkID = drink.idDrink
-        
-          destination.drinkImage.loadImages(urlString: drink.strDrinkThumb)
-          
-          destination.drinkLabel.text = drink.strDrink
+        destination.drink_Image = drink.strDrinkThumb
+        destination.drinkName = drink.strDrink
+
       }
   }
 
