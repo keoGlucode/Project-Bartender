@@ -8,18 +8,19 @@
 
 import Foundation
 
+
 struct CocktailData: Codable {
     
-    var drinks = [Category]()
+    var drinks : [Category]
 }
 
 struct Category: Codable {
-    var strCategory : String
+    var strCategory : String?
 }
 
 
 struct CocktailDetails : Codable {
-    var drinks = [Details]()
+    var drinks : [Details]
 }
 
 struct Details : Codable {
@@ -27,7 +28,7 @@ struct Details : Codable {
     var strDrink : String
     var strDrinkThumb : String
 }
-
+/*
 struct DrinkDetails : Codable {
     var drinks = [DrinkAttributes]()
 }
@@ -36,4 +37,20 @@ struct DrinkAttributes : Codable {
     var idDrink : String?
     var strAlcoholic : String?
     var strInstructions : String?
+}*/
+
+struct Cocktails: Codable {
+    
+    let drinks : [Drink]
 }
+
+struct Drink: Codable {
+    let strCategory : String?
+    let idDrink : String
+    let strDrink : String
+    let strDrinkThumb : String
+
+    let strAlcoholic : String?
+    let strInstructions : String?
+}
+

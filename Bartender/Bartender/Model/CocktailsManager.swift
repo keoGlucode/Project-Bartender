@@ -10,11 +10,11 @@ import UIKit
 
 class CocktailsManager {
     
-    var catergories = CocktailData()
+    var datas = [Category]()
     
-    var drinks = CocktailDetails()
+    var drinks = [Details]()
     
-    var drinksDetails = DrinkDetails()
+    var drinksDetails = [Drink]()
     
     func performRequest(completed: @escaping () -> () ) {
         
@@ -34,8 +34,12 @@ class CocktailsManager {
                 if let safeData = data {
                     
                     do {
-                        self.catergories = try JSONDecoder().decode(CocktailData.self, from: safeData)
                         
+
+                        
+                        let cocktail = try JSONDecoder().decode(CocktailData.self, from: safeData)
+                        
+                        self.datas = cocktail.drinks
                         
                         DispatchQueue.main.async {
                             completed()
@@ -68,14 +72,13 @@ class CocktailsManager {
     }*/
     
     
-    
-
-    
     func performDrinksRequest(stringAppend: String, completed: @escaping () -> () ) {
         
         let correctString = manageString(categoryName: stringAppend)
         
         let urlString = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=\(correctString)"
+        
+        
         
         if let url = URL(string: urlString) {
             
@@ -91,12 +94,15 @@ class CocktailsManager {
                 if let safeData = data {
                     
                     do {
-                        self.drinks = try JSONDecoder().decode(CocktailDetails.self, from: safeData)
                         
+                        let det = try JSONDecoder().decode(CocktailDetails.self, from: safeData)
+                        
+                        self.drinks = det.drinks
+                        //print(self.drinkItem)
                         
                         DispatchQueue.main.async {
                             completed()
-                            
+
                         }
                     }catch {
                         print("Error with JSON \(error.localizedDescription)")
@@ -127,6 +133,10 @@ class CocktailsManager {
         }
             
     }
+
+
+    
+
     
     
     func performDrinksAttributesRequest(stringAppend: String, completed: @escaping () -> () ) {
@@ -148,7 +158,7 @@ class CocktailsManager {
                     
                     do {
                         
-                        self.drinksDetails = try JSONDecoder().decode(DrinkDetails.self, from: safeData)
+                        self.drinksDetails = try JSONDecoder().decode([Drink].self, from: safeData)
                         
                         
                         DispatchQueue.main.async {
