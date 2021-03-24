@@ -15,12 +15,27 @@ class DrinkDetailsViewController: UIViewController {
     @IBOutlet weak var glassLabel: UILabel!
     @IBOutlet weak var instructionsLabel: UILabel!
     
+    
+    var serviceCall = CocktailsManager()
+    var drinkID = ""
+    var drink_Image = ""
+    var drinkName = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        serviceCall.performDrinksAttributesRequest(stringAppend: drinkID, completed: setLabels)
     }
     
+    
+    func setLabels() {
+        drinkNameLabel.text = drinkName
+        drinkImage.loadImages(urlString: drink_Image)
+        
+        print(serviceCall.drinksDetails)
+    }
 
     /*
     // MARK: - Navigation
