@@ -345,7 +345,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Izy-dv-jwu">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Izy-dv-jwu">
                                 <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HoB-6x-yTI">
@@ -402,7 +402,7 @@
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6n-tg-9yx">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6n-tg-9yx">
                                                         <rect key="frame" x="0.0" y="318.5" width="335" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -430,7 +430,7 @@
                                     <constraint firstItem="HoB-6x-yTI" firstAttribute="leading" secondItem="Izy-dv-jwu" secondAttribute="leading" id="NBD-zj-8FF"/>
                                     <constraint firstAttribute="trailing" secondItem="HoB-6x-yTI" secondAttribute="trailing" id="arE-qU-buZ"/>
                                     <constraint firstItem="HoB-6x-yTI" firstAttribute="width" secondItem="Izy-dv-jwu" secondAttribute="width" id="fr7-aT-LjD"/>
-                                    <constraint firstItem="HoB-6x-yTI" firstAttribute="height" relation="greaterThanOrEqual" secondItem="LcX-Dh-m7N" secondAttribute="height" priority="250" id="mhg-cz-HE3"/>
+                                    <constraint firstItem="HoB-6x-yTI" firstAttribute="height" secondItem="LcX-Dh-m7N" secondAttribute="height" priority="250" id="mhg-cz-HE3"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="LcX-Dh-m7N"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="btM-Xa-emM"/>
