@@ -53,12 +53,7 @@ class CategoryTableViewController: UITableViewController {
             
             guard let selectedRow = tableView.indexPathForSelectedRow?.row else { return }
             destination.categoryItem = cocktails.datas[selectedRow].strCategory ?? "Beer"
-            
-                //cocktails.performDrinksRequest(stringAppend: cocktails.datas[selectedRow].strCategory ?? "Beer", completed: printSomething)
-            
-            //destination.drinkItem = cocktails.drinks
-            //print("really")
-            //print(cocktails.drinks)
+            destination.navigationItem.title = cocktails.datas[selectedRow].strCategory ??  "Just drink"
             
         }
     }

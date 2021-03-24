@@ -167,7 +167,7 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
         destination.drinkID = drink.idDrink
         destination.drink_Image = drink.strDrinkThumb
         destination.drinkName = drink.strDrink
-        
+        destination.navigationItem.title = drink.strDrink
       }
   }
 
