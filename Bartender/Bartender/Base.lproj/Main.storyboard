@@ -85,16 +85,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hourglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BjO-BH-k5h">
-                                <rect key="frame" x="67" y="184.5" width="241" height="297.5"/>
+                                <rect key="frame" x="67" y="65" width="241" height="307.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="1PQ-Kb-X9N"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="chg-JA-K1W"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9em-hH-nzr">
-                                <rect key="frame" x="67" y="507" width="240" height="50"/>
+                                <rect key="frame" x="67" y="394" width="240" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8S6-Qx-RhU">
+                                <rect key="frame" x="67" y="476" width="240" height="55"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -102,22 +108,27 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="BjO-BH-k5h" firstAttribute="centerX" secondItem="667-p1-W9x" secondAttribute="centerX" id="4Nc-tm-4tD"/>
+                            <constraint firstItem="9em-hH-nzr" firstAttribute="top" secondItem="BjO-BH-k5h" secondAttribute="bottom" constant="20" id="FYl-PG-8Eh"/>
                             <constraint firstItem="BjO-BH-k5h" firstAttribute="leading" secondItem="aBk-VY-g3P" secondAttribute="leading" constant="67" id="JXr-oS-wXN"/>
+                            <constraint firstItem="aBk-VY-g3P" firstAttribute="bottom" secondItem="8S6-Qx-RhU" secondAttribute="bottom" constant="87" id="UJ1-nG-CDh"/>
+                            <constraint firstItem="8S6-Qx-RhU" firstAttribute="leading" secondItem="9em-hH-nzr" secondAttribute="leading" id="W3b-D1-lgL"/>
                             <constraint firstItem="aBk-VY-g3P" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="BjO-BH-k5h" secondAttribute="bottom" constant="45" id="eDv-B4-J7w"/>
-                            <constraint firstItem="BjO-BH-k5h" firstAttribute="top" relation="greaterThanOrEqual" secondItem="aBk-VY-g3P" secondAttribute="top" constant="20" id="veK-eu-iAM"/>
-                            <constraint firstItem="BjO-BH-k5h" firstAttribute="centerY" secondItem="667-p1-W9x" secondAttribute="centerY" id="wP5-f1-dRy"/>
+                            <constraint firstItem="8S6-Qx-RhU" firstAttribute="trailing" secondItem="9em-hH-nzr" secondAttribute="trailing" id="lH4-aS-Kxy"/>
+                            <constraint firstItem="8S6-Qx-RhU" firstAttribute="top" secondItem="9em-hH-nzr" secondAttribute="bottom" constant="32" id="mD4-KO-aEh"/>
+                            <constraint firstItem="BjO-BH-k5h" firstAttribute="top" secondItem="aBk-VY-g3P" secondAttribute="top" constant="20" id="veK-eu-iAM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aBk-VY-g3P"/>
                     </view>
                     <navigationItem key="navigationItem" id="lAt-9i-vEA"/>
                     <connections>
                         <outlet property="drinkImage" destination="BjO-BH-k5h" id="ofS-zD-cVd"/>
+                        <outlet property="drinkInstructions" destination="8S6-Qx-RhU" id="o6e-bh-S0E"/>
                         <outlet property="drinkLabel" destination="9em-hH-nzr" id="jUn-A1-7Pj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ToK-IG-4vg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2260" y="1773"/>
+            <point key="canvasLocation" x="2260" y="1772.5637181409297"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="MHX-Kk-04u">
@@ -148,7 +159,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" rowHeight="219.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gdm-iI-9oC" customClass="CategoryTableViewCell" customModule="Bartender" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" rowHeight="219.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gdm-iI-9oC" customClass="CategoryTableViewCell" customModule="Bartender" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="219.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gdm-iI-9oC" id="eCe-Ht-kRV">
@@ -324,6 +335,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kJd-f2-5bc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-271.19999999999999" y="1772.5637181409297"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1s9-BN-xmQ">
+            <objects>
+                <viewController id="sH4-Ng-0MU" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gq0-dc-CUM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="gMD-TE-zxS"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iCS-PS-hbi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-271" y="2651"/>
         </scene>
         <!--Categories-->
         <scene sceneID="YzT-Fk-WR7">

@@ -12,6 +12,7 @@ class DrinkAttributesViewController: UIViewController {
     
     @IBOutlet weak var drinkLabel: UILabel!
     
+    @IBOutlet weak var drinkInstructions: UILabel!
     
     @IBOutlet weak var drinkImage: UIImageView!
     
