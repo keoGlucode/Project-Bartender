@@ -34,7 +34,10 @@ class DrinkDetailsViewController: UIViewController {
         drinkNameLabel.text = drinkName
         drinkImage.loadImages(urlString: drink_Image)
         
-        print(serviceCall.drinksDetails)
+        alcoholLabel.text = serviceCall.drinksDetails[0].strAlcoholic
+        instructionsLabel.text = serviceCall.drinksDetails[0].strInstructions
+        
+        glassLabel.text = serviceCall.drinksDetails[0].strGlass
     }
 
     /*
