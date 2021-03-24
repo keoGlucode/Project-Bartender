@@ -9,7 +9,12 @@
 import UIKit
 
 class DrinkDetailsViewController: UIViewController {
-
+    @IBOutlet weak var drinkImage: UIImageView!
+    @IBOutlet weak var drinkNameLabel: UILabel!
+    @IBOutlet weak var alcoholLabel: UILabel!
+    @IBOutlet weak var glassLabel: UILabel!
+    @IBOutlet weak var instructionsLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
