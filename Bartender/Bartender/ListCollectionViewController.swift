@@ -153,21 +153,21 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
     
  
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "viewAttributes", sender: self)
+        performSegue(withIdentifier: "drinkDetails", sender: self)
     }
     
     
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       
-      if let destination = segue.destination as? DrinkAttributesViewController {
+      if let destination = segue.destination as? DrinkDetailsViewController {
           
         let drink = drinkItem[( collectionView.indexPathsForSelectedItems![0].row)]
           
         destination.drinkID = drink.idDrink
         destination.drink_Image = drink.strDrinkThumb
         destination.drinkName = drink.strDrink
-
+        
       }
   }
 
