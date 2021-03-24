@@ -27,7 +27,7 @@ class DrinkAttributesViewController: UIViewController {
         
         drinks.performDrinksAttributesRequest(stringAppend: drinkID, completed: setLabels)
         
-
+        
     }
     
     
