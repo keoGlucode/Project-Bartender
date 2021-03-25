@@ -20,6 +20,12 @@ class LoadingViewController: UIViewController {
         view = UIView()
         
         view.backgroundColor = UIColor(white: 5, alpha: 1.0)
+        
+        let spinner = UIActivityIndicatorView(style: .large)
+        
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        
+        spinner.startAnimating()
     }
     
 
