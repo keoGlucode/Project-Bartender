@@ -16,6 +16,10 @@ class LoadingViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func loadView() {
+        <#code#>
+    }
+    
 
     /*
     // MARK: - Navigation
