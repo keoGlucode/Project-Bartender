@@ -11,7 +11,9 @@ import UIKit
 class CategoryTableViewController: UITableViewController {
     
     var cocktails = CocktailsManager()
-    var cat = "mxm"
+    //var cat = "mxm"
+    let loadingViewController = LoadingViewController()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
