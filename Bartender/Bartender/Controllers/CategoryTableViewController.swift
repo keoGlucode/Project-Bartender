@@ -67,6 +67,13 @@ class CategoryTableViewController: UITableViewController {
         
     }
     
+    func addLoadingIndicator() {
+        addChild(loadingViewController)
+        loadingViewController.view.frame = view.frame
+        view.addSubview(loadingViewController.view)
+        loadingViewController.didMove(toParent: self)
+    }
+    
     
 }
 
