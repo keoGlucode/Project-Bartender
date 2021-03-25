@@ -19,10 +19,12 @@ class LoadingViewController: UIViewController {
     override func loadView() {
         view = UIView()
         
-        view.backgroundColor = UIColor(white: 5, alpha: 1.0)
+        view.backgroundColor = UIColor(white: 0, alpha: 0.9)
         
         
         let spinner = UIActivityIndicatorView(style: .large)
+        
+        spinner.color = .yellow
         
         spinner.translatesAutoresizingMaskIntoConstraints = false
         
