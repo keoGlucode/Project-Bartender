@@ -74,6 +74,11 @@ class CategoryTableViewController: UITableViewController {
         loadingViewController.didMove(toParent: self)
     }
     
+    func removeLoadingIndicator() {
+        self.loadingViewController.willMove(toParent: nil)
+        self.loadingViewController.view.removeFromSuperview()
+        self.loadingViewController.removeFromParent()
+    }
     
 }
 
