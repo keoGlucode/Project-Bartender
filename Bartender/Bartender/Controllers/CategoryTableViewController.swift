@@ -18,7 +18,8 @@ class CategoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cocktails.performRequest(completed: self.tableView.reloadData)
+        addLoadingIndicator()
+        cocktails.performRequest(completed: removeLoadingIndicator)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -75,6 +76,9 @@ class CategoryTableViewController: UITableViewController {
     }
     
     func removeLoadingIndicator() {
+        
+        self.tableView.reloadData()
+        
         self.loadingViewController.willMove(toParent: nil)
         self.loadingViewController.view.removeFromSuperview()
         self.loadingViewController.removeFromParent()
