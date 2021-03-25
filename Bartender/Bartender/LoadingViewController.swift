@@ -21,11 +21,17 @@ class LoadingViewController: UIViewController {
         
         view.backgroundColor = UIColor(white: 5, alpha: 1.0)
         
+        
         let spinner = UIActivityIndicatorView(style: .large)
         
         spinner.translatesAutoresizingMaskIntoConstraints = false
         
         spinner.startAnimating()
+        
+        
+        view.addSubview(spinner)
+        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
 
