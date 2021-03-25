@@ -11,10 +11,9 @@ import UIKit
 class CategoryTableViewController: UITableViewController {
     
     var cocktails = CocktailsManager()
-    //var cat = "mxm"
+    
     let loadingViewController = LoadingViewController()
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,13 +58,6 @@ class CategoryTableViewController: UITableViewController {
             destination.navigationItem.title = cocktails.datas[selectedRow].strCategory ??  "Just drink"
             
         }
-    }
-    
-    func printSomething() {
-        print("request done")
-        //print(cocktails.drinks)
-        
-        
     }
     
     func addLoadingIndicator() {

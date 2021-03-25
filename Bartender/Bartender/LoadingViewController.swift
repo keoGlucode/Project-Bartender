@@ -24,7 +24,7 @@ class LoadingViewController: UIViewController {
         
         let spinner = UIActivityIndicatorView(style: .large)
         
-        spinner.color = .yellow
+        spinner.color = .white
         
         spinner.translatesAutoresizingMaskIntoConstraints = false
         
