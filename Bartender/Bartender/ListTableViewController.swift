@@ -32,6 +32,13 @@ class ListTableViewController: UITableViewController {
             self.tableView.reloadData()
         })
         
+        switch categoryItem {
+        case "Gin":
+            <#code#>
+        default:
+            <#code#>
+        }
+        
         
     }
 
