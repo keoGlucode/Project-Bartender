@@ -10,8 +10,10 @@ import UIKit
 
 class ListTableViewController: UITableViewController {
 
+    var loadingViewController = LoadingViewController()
     var cocktailItem = CocktailsManager()
-    var categoryItem = "Ordinary_Drink"
+    var categoryItem = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,16 +29,14 @@ class ListTableViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        cocktailItem.performDrinksRequest(stringAppend: categoryItem, completed: {
-            
-            self.tableView.reloadData()
-        })
         
         switch categoryItem {
-        case "Gin":
-            <#code#>
+        case "Alcoholic":
+            cocktailItem.performTypeRequest(stringAppend: categoryItem, completed: removeLoadingIndicator)
+        case "Non-Alcoholic":
+            cocktailItem.performTypeRequest(stringAppend: "Non_Alcoholic", completed: removeLoadingIndicator)
         default:
-            <#code#>
+            cocktailItem.performFilterRequest(stringAppend: categoryItem, completed: removeLoadingIndicator)
         }
         
         
@@ -66,6 +66,22 @@ class ListTableViewController: UITableViewController {
         cell.listImage?.loadImages(urlString: item.strDrinkThumb)
 
         return cell
+    }
+    
+    func addLoadingIndicator() {
+        addChild(loadingViewController)
+        loadingViewController.view.frame = view.frame
+        view.addSubview(loadingViewController.view)
+        loadingViewController.didMove(toParent: self)
+    }
+    
+    func removeLoadingIndicator() {
+        
+        self.tableView.reloadData()
+        
+        self.loadingViewController.willMove(toParent: nil)
+        self.loadingViewController.view.removeFromSuperview()
+        self.loadingViewController.removeFromParent()
     }
     
 
