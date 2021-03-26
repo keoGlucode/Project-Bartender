@@ -60,7 +60,7 @@ class CocktailsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //performSegue(withIdentifier: "viewDrinksDetails", sender: self)
+        performSegue(withIdentifier: "typeDrinks", sender: self)
         
         //let vc = storyboard?.instantiateViewController(identifier: "DrinkAttributesViewController") as! DrinkAttributesViewController
         
@@ -72,13 +72,11 @@ class CocktailsTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let destination = segue.destination as? DrinkAttributesViewController {
+        if let destination = segue.destination as? ListTableViewController {
             
-            let drink = cocktailItem.drinks[(tableView.indexPathForSelectedRow?.row)!]
+            let drink = types[(tableView.indexPathForSelectedRow?.row)!]
             
-            destination.drinkImage.loadImages(urlString: drink.strDrinkThumb)
-            
-            destination.drinkLabel.text = drink.strDrink
+            destination.categoryItem = drink
         }
     }
 
