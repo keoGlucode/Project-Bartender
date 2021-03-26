@@ -18,6 +18,8 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
     var serviceCall = CocktailsManager()
     var drinkItem = [Details]()
     
+    var loadingViewController = LoadingViewController()
+    
     var categoryItem = ""
     
     override func viewDidLoad() {
@@ -34,7 +36,9 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
         self.collectionView!.delegate = self
         self.collectionView!.collectionViewLayout = UICollectionViewFlowLayout()
         
-        self.performDrinksRequest(stringAppend: categoryItem, completed: printResult )
+        addLoadingIndicator()
+        
+        self.performDrinksRequest(stringAppend: categoryItem, completed: removeLoadingIndicator )
 
     }
     
@@ -86,7 +90,7 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: 150, height: 200)
+        return CGSize.init(width: 150, height: 250)
     }
     
     func performDrinksRequest(stringAppend: String, completed: @escaping () -> () ) {
@@ -170,6 +174,22 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
         destination.navigationItem.title = drink.strDrink
       }
   }
+    
+    func addLoadingIndicator() {
+        addChild(loadingViewController)
+        loadingViewController.view.frame = view.frame
+        view.addSubview(loadingViewController.view)
+        loadingViewController.didMove(toParent: self)
+    }
+    
+    func removeLoadingIndicator() {
+        
+        self.collectionView.reloadData()
+        
+        self.loadingViewController.willMove(toParent: nil)
+        self.loadingViewController.view.removeFromSuperview()
+        self.loadingViewController.removeFromParent()
+    }
 
 
     // MARK: UICollectionViewDelegate
