@@ -64,38 +64,13 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" systemItem="search" id="re7-L9-jdf"/>
+                    <connections>
+                        <segue destination="1Hn-ce-F8P" kind="show" identifier="typeDrinks" id="6vi-uz-Uh8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z6l-vq-Lnc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2196" y="875"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="d5H-Vm-GSs">
-            <objects>
-                <tableViewController id="hLb-K0-Jxg" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dMA-bq-3IK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="el9-gu-L6x">
-                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="el9-gu-L6x" id="KPj-03-txW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="hLb-K0-Jxg" id="3Om-5M-sge"/>
-                            <outlet property="delegate" destination="hLb-K0-Jxg" id="TCu-V9-pHI"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="H2a-2T-Bis" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3122" y="875"/>
         </scene>
         <!--Drink Attributes View Controller-->
         <scene sceneID="oF9-p5-H96">
@@ -240,7 +215,7 @@
             <objects>
                 <tableViewController id="1Hn-ce-F8P" customClass="ListTableViewController" customModule="Bartender" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qxi-Af-5J8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -254,7 +229,7 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NM9-dt-qwb">
                                             <rect key="frame" x="53" y="33" width="81" height="111"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="111" id="JOA-MS-Zhp"/>
+                                                <constraint firstAttribute="height" priority="750" constant="120" id="JOA-MS-Zhp"/>
                                                 <constraint firstAttribute="width" constant="81" id="R5h-b1-cC5"/>
                                             </constraints>
                                         </imageView>
@@ -500,6 +475,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="6vi-uz-Uh8"/>
         <segue reference="oNR-Xt-Ge1"/>
     </inferredMetricsTieBreakers>
     <resources>
