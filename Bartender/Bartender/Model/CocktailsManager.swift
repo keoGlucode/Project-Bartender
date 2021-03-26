@@ -141,7 +141,7 @@ class CocktailsManager {
     
     func performDrinksAttributesRequest(stringAppend: String, completed: @escaping () -> () ) {
         
-        let urlString = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=\(stringAppend)"
+        let urlString = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=\(stringAppend)"
         
         
         
@@ -178,21 +178,86 @@ class CocktailsManager {
         }
     }
     
-    /* func parseDrinksJson(cocktailData : Data) -> CocktailDetails? {
-        
-        let decoder = JSONDecoder()
-        
-        do {
-            let decodedData = try decoder.decode(CocktailDetails.self, from: cocktailData)
-            
-            print("yeyi")
-            
-            return decodedData
-        }
-        catch {
-            return nil
-        }
-    }*/
+    func performFilterRequest(stringAppend: String, completed: @escaping () -> () ) {
+         
+         let urlString = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=\(stringAppend)"
+         
+         
+         
+         if let url = URL(string: urlString) {
+             
+             let session = URLSession(configuration: .default)
+             
+             let task = session.dataTask(with: url) { (data, response, error) in
+                 
+                 if error != nil {
+                     print(error!.localizedDescription)
+                     return
+                 }
+                 
+                 if let safeData = data {
+                     
+                     do {
+                         
+                         let det = try JSONDecoder().decode(CocktailDetails.self, from: safeData)
+                         
+                         self.drinks = det.drinks
+                         //print(self.drinkItem)
+                         
+                         DispatchQueue.main.async {
+                             completed()
+
+                         }
+                     }catch {
+                         print("Error with JSON \(error.localizedDescription)")
+                     }
+                 }
+             }
+             
+             task.resume()
+         }
+     }
+    
+    
+    func performTypeRequest(stringAppend: String, completed: @escaping () -> () ) {
+         
+         let urlString = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=\(stringAppend)"
+         
+         
+         
+         if let url = URL(string: urlString) {
+             
+             let session = URLSession(configuration: .default)
+             
+             let task = session.dataTask(with: url) { (data, response, error) in
+                 
+                 if error != nil {
+                     print(error!.localizedDescription)
+                     return
+                 }
+                 
+                 if let safeData = data {
+                     
+                     do {
+                         
+                         let det = try JSONDecoder().decode(CocktailDetails.self, from: safeData)
+                         
+                         self.drinks = det.drinks
+                         //print(self.drinkItem)
+                         
+                         DispatchQueue.main.async {
+                             completed()
+
+                         }
+                     }catch {
+                         print("Error with JSON \(error.localizedDescription)")
+                     }
+                 }
+             }
+             
+             task.resume()
+         }
+     }
     
 }
 
