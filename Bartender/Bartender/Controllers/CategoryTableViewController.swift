@@ -44,9 +44,6 @@ class CategoryTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         performSegue(withIdentifier: "showDrinks", sender: self)
-        
-        
-
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
