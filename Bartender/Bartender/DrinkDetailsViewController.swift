@@ -21,10 +21,14 @@ class DrinkDetailsViewController: UIViewController {
     var drink_Image = ""
     var drinkName = String()
     
+    let loadingViewController = LoadingViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        addLoadingIndicator()
         
         serviceCall.performDrinksAttributesRequest(stringAppend: drinkID, completed: setLabels)
     }
@@ -38,6 +42,24 @@ class DrinkDetailsViewController: UIViewController {
         instructionsLabel.text = serviceCall.drinksDetails[0].strInstructions
         
         glassLabel.text = serviceCall.drinksDetails[0].strGlass
+        
+        removeLoadingIndicator()
+    }
+    
+    func addLoadingIndicator() {
+        addChild(loadingViewController)
+        loadingViewController.view.frame = view.frame
+        view.addSubview(loadingViewController.view)
+        loadingViewController.didMove(toParent: self)
+    }
+    
+    func removeLoadingIndicator() {
+        
+        //self.collectionView.reloadData()
+        
+        self.loadingViewController.willMove(toParent: nil)
+        self.loadingViewController.view.removeFromSuperview()
+        self.loadingViewController.removeFromParent()
     }
 
     /*
