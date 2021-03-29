@@ -10,13 +10,13 @@ import UIKit
 
 class CocktailsManager {
     
-    var datas = [Category]()
+    var categories = [Category]()
     
     var drinks = [Details]()
     
     var drinksDetails = [Drink]()
     
-    func performRequest(completed: @escaping () -> () ) {
+    func performCategoryRequest(completed: @escaping () -> () ) {
         
         let categoryURL = "https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list"
         
@@ -39,7 +39,7 @@ class CocktailsManager {
                         
                         let cocktail = try JSONDecoder().decode(CocktailData.self, from: safeData)
                         
-                        self.datas = cocktail.drinks
+                        self.categories = cocktail.drinks
                         
                         DispatchQueue.main.async {
                             completed()
@@ -54,22 +54,6 @@ class CocktailsManager {
             task.resume()
         }
     }
-    
-    /*mutating func parseJson(cocktailData : Data) -> CocktailData? {
-        
-        let decoder = JSONDecoder()
-        
-        do {
-            catergories = try decoder.decode(CocktailData.self, from: cocktailData)
-            
-            
-            
-            return catergories
-        }
-        catch {
-            return nil
-        }
-    }*/
     
     
     func performDrinksRequest(stringAppend: String, completed: @escaping () -> () ) {
@@ -141,7 +125,7 @@ class CocktailsManager {
     
     func performDrinksAttributesRequest(stringAppend: String, completed: @escaping () -> () ) {
         
-        let urlString = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=\(stringAppend)"
+        let urlString = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=\(stringAppend)"
         
         
         
@@ -267,6 +251,9 @@ var imageCache = NSCache<NSString, UIImage>()
 
 extension UIImageView {
     func loadImages(urlString : String) {
+        
+        self.layer.cornerRadius = 8.0
+        self.clipsToBounds = true
         
         if let image = imageCache.object(forKey: urlString as NSString) {
             self.image = image
