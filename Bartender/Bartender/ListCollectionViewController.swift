@@ -11,8 +11,6 @@ import UIKit
 private let reuseIdentifier = "ListCollectionViewCell"
 
 
-
-
 class ListCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var serviceCall = CocktailsManager()
