@@ -10,7 +10,7 @@ import UIKit
 
 class CategoryTableViewController: UITableViewController {
     
-    var cocktails = CocktailsManager()
+    var dataProvider = CocktailsManager()
     
     let loadingViewController = LoadingViewController()
     
@@ -18,7 +18,7 @@ class CategoryTableViewController: UITableViewController {
         super.viewDidLoad()
         
         addLoadingIndicator()
-        cocktails.performRequest(completed: removeLoadingIndicator)
+        dataProvider.performCategoryRequest(completed: removeLoadingIndicator)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -27,12 +27,12 @@ class CategoryTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cocktails.datas.count
+        return dataProvider.categories.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let category = cocktails.datas[indexPath.row]
+        let category = dataProvider.categories[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! CategoryTableViewCell
         
@@ -51,8 +51,8 @@ class CategoryTableViewController: UITableViewController {
         if let destination = segue.destination as? ListCollectionViewController {
             
             guard let selectedRow = tableView.indexPathForSelectedRow?.row else { return }
-            destination.categoryItem = cocktails.datas[selectedRow].strCategory ?? "Beer"
-            destination.navigationItem.title = cocktails.datas[selectedRow].strCategory ??  "Just drink"
+            destination.categoryItem = dataProvider.categories[selectedRow].strCategory ?? "Beer"
+            destination.navigationItem.title = dataProvider.categories[selectedRow].strCategory ??  "Just drink"
             
         }
     }
@@ -71,6 +71,7 @@ class CategoryTableViewController: UITableViewController {
         self.loadingViewController.willMove(toParent: nil)
         self.loadingViewController.view.removeFromSuperview()
         self.loadingViewController.removeFromParent()
+        
     }
     
 }
