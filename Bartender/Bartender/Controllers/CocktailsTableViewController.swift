@@ -18,10 +18,6 @@ class CocktailsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //cocktailItem.performDrinksRequest(stringAppend: categoryItem, completed: self.tableView.reloadData)
-        
-        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -37,7 +33,6 @@ class CocktailsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
@@ -54,20 +49,11 @@ class CocktailsTableViewController: UITableViewController {
         
         cell.textLabel?.text = type
         
-        //cell.imageView?.loadImages(urlString: category.strDrinkThumb)
-        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "typeDrinks", sender: self)
-        
-        //let vc = storyboard?.instantiateViewController(identifier: "DrinkAttributesViewController") as! DrinkAttributesViewController
-        
-        //vc.drinkID = cocktailItem.drinks.drinks[indexPath.row].idDrink
-        
-        
-        //self.navigationController?.pushViewController(vc, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -79,8 +65,4 @@ class CocktailsTableViewController: UITableViewController {
             destination.categoryItem = drink
         }
     }
-
-
-
-
 }
