@@ -10,8 +10,7 @@ import UIKit
 
 class CocktailsTableViewController: UITableViewController {
 
-    var cocktailItem = CocktailsManager()
-    var categoryItem = "Ordinary_Drink"
+    //var cocktailItem = CocktailsManager()
     
     var types = ["Gin","Vodka","Whiskey","Brandy", "Rum", "Wine", "Alcoholic","Non-Alcoholic"]
     
