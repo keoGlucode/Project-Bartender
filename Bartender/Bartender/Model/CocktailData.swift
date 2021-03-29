@@ -50,7 +50,7 @@ struct Drink: Codable {
     let idDrink : String
     let strDrink : String
     let strDrinkThumb : String
-    var strGlass : String
+    let strGlass : String
     let strAlcoholic : String?
     let strInstructions : String?
 }

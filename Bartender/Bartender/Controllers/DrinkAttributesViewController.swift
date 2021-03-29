@@ -23,19 +23,12 @@ class DrinkAttributesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         drinks.performDrinksAttributesRequest(stringAppend: drinkID, completed: setLabels)
-        
-        
     }
-    
-    
     
     func setLabels() {
         drinkLabel.text = drinkName
         drinkImage.loadImages(urlString: drink_Image)
     }
-
     
 }
