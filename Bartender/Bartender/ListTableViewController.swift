@@ -11,7 +11,7 @@ import UIKit
 class ListTableViewController: UITableViewController {
 
     var loadingViewController = LoadingViewController()
-    var cocktailItem = CocktailsManager()
+    var dataProvider = CocktailsManager()
     var categoryItem = ""
     
     
@@ -32,11 +32,11 @@ class ListTableViewController: UITableViewController {
         
         switch categoryItem {
         case "Alcoholic":
-            cocktailItem.performTypeRequest(stringAppend: categoryItem, completed: removeLoadingIndicator)
+            dataProvider.performTypeRequest(stringAppend: categoryItem, completed: removeLoadingIndicator)
         case "Non-Alcoholic":
-            cocktailItem.performTypeRequest(stringAppend: "Non_Alcoholic", completed: removeLoadingIndicator)
+            dataProvider.performTypeRequest(stringAppend: "Non_Alcoholic", completed: removeLoadingIndicator)
         default:
-            cocktailItem.performFilterRequest(stringAppend: categoryItem, completed: removeLoadingIndicator)
+            dataProvider.performFilterRequest(stringAppend: categoryItem, completed: removeLoadingIndicator)
         }
         
         
@@ -50,14 +50,14 @@ class ListTableViewController: UITableViewController {
     }*/
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cocktailItem.drinks.count
+        return dataProvider.drinks.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! ListTableViewCell
 
-        let item = cocktailItem.drinks[indexPath.row]
+        let item = dataProvider.drinks[indexPath.row]
         
         cell.listLabel?.text = item.strDrink
         
