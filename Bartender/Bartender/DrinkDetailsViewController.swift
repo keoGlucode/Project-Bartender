@@ -25,8 +25,6 @@ class DrinkDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         addLoadingIndicator()
         
@@ -54,9 +52,6 @@ class DrinkDetailsViewController: UIViewController {
     }
     
     func removeLoadingIndicator() {
-        
-        //self.collectionView.reloadData()
-        
         self.loadingViewController.willMove(toParent: nil)
         self.loadingViewController.view.removeFromSuperview()
         self.loadingViewController.removeFromParent()
