@@ -14,6 +14,9 @@ class ListCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var drinkLabel: UILabel!
     
+    @IBAction func didTapOnButton(_ sender: UIButton) {
+        sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+    }
     func setupOutlets(drinkItem : Details?) {
         if drinkItem != nil{
             drinkImageView.loadImages(urlString: drinkItem!.strDrinkThumb)
@@ -24,4 +27,5 @@ class ListCollectionViewCell: UICollectionViewCell {
             drinkLabel.text = "damn bro"
         }
     }
+    
 }
