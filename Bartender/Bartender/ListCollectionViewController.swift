@@ -77,7 +77,11 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ListCollectionViewCell
     
         cell.setupOutlets(drinkItem: drinkItem[indexPath.row])
-    
+        
+            //changeCellStatus(cell: cell)
+        
+        cell.link = self
+        
         return cell
     }
     
@@ -185,6 +189,15 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
         self.loadingViewController.willMove(toParent: nil)
         self.loadingViewController.view.removeFromSuperview()
         self.loadingViewController.removeFromParent()
+    }
+    
+    
+    func changeCellStatus(cell : ListCollectionViewCell){
+        
+        let item = FavouriteItem(idDrink: cell.id, strDrink: cell.name, strDrinkThumb: cell.thumb, isFave: cell._isFavourite)
+        
+        print(item)
+        
     }
 
 
