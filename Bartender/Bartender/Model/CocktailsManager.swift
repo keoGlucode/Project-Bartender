@@ -248,6 +248,8 @@ class CocktailsManager {
 //global variable for image cache
 var imageCache = NSCache<NSString, UIImage>()
 
+var favourites = [FavouriteItem]()
+
 
 extension UIImageView {
     func loadImages(urlString : String) {
