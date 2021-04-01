@@ -37,7 +37,6 @@ struct DrinkAttributes : Codable {
     var idDrink : String
     var strAlcoholic : String?
     var strInstructions : String?
-    
 }
 
 struct CocktailAttributes: Codable {
@@ -55,3 +54,10 @@ struct Drink: Codable {
     let strInstructions : String?
 }
 
+
+struct FavouriteItem : Codable {
+    var idDrink : String
+    var strDrink : String
+    var strDrinkThumb : String
+    var isFave : Bool
+}
