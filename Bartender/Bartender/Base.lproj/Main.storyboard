@@ -15,7 +15,19 @@
                     <view key="view" contentMode="scaleToFill" id="UV1-xa-q1v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ymi-9r-rbg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ymi-9r-rbg" firstAttribute="top" secondItem="Jfg-VP-IjR" secondAttribute="top" id="8HV-FK-t0A"/>
+                            <constraint firstItem="Jfg-VP-IjR" firstAttribute="bottom" secondItem="Ymi-9r-rbg" secondAttribute="bottom" id="fUM-91-ydb"/>
+                            <constraint firstItem="Jfg-VP-IjR" firstAttribute="trailing" secondItem="Ymi-9r-rbg" secondAttribute="trailing" id="otS-SN-aqx"/>
+                            <constraint firstItem="Ymi-9r-rbg" firstAttribute="leading" secondItem="Jfg-VP-IjR" secondAttribute="leading" id="ydw-tR-5vx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Jfg-VP-IjR"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="OlI-CX-ZYS"/>
@@ -328,6 +340,7 @@
                                 <connections>
                                     <outlet property="drinkImageView" destination="bcv-Ez-JL7" id="M9H-e1-6bo"/>
                                     <outlet property="drinkLabel" destination="dqB-WZ-F5o" id="xSg-xX-FrQ"/>
+                                    <outlet property="favouriteButton" destination="xAC-Pw-ag5" id="3fa-3P-QnL"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
