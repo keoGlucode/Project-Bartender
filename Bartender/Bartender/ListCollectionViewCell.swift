@@ -20,27 +20,27 @@ class ListCollectionViewCell: UICollectionViewCell {
     var _isFavourite = false
     
     var link : ListCollectionViewController?
+    var favDelegate : favButtonDelegate?
     
     @IBOutlet weak var favouriteButton: UIButton!
+    
+    
+    
     @IBAction func didTapOnButton(_ sender: UIButton) {
-        setFavourite()
+        favDelegate?.toggleFavourite(cellID: self.id)
     }
     
+    
     func setFavourite() {
-        if(_isFavourite == false) {
+        
+        if(self._isFavourite == false) {
             self._isFavourite = true
             self.favouriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            
-            favourites.append(FavouriteItem(idDrink: id, strDrink: name, strDrinkThumb: thumb, isFave: true))
-            //print("fill")
-            link?.changeCellStatus(cell: self)
+
         } else {
             self._isFavourite = false
             self.favouriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
             print(favourites)
-            //print("mxm")
-            link?.changeCellStatus(cell: self)
-            
             
         }
     }
@@ -62,4 +62,8 @@ class ListCollectionViewCell: UICollectionViewCell {
         }
     }
     
+}
+
+protocol favButtonDelegate {
+    func toggleFavourite(cellID: String)
 }
