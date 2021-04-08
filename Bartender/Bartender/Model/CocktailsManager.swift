@@ -82,8 +82,7 @@ class CocktailsManager {
                         let det = try JSONDecoder().decode(CocktailDetails.self, from: safeData)
                         
                         self.drinks = det.drinks
-                        //print(self.drinkItem)
-                        
+
                         DispatchQueue.main.async {
                             completed()
 
@@ -227,7 +226,7 @@ class CocktailsManager {
                          let det = try JSONDecoder().decode(CocktailDetails.self, from: safeData)
                          
                          self.drinks = det.drinks
-                         //print(self.drinkItem)
+                         //print(self.drinks)
                          
                          DispatchQueue.main.async {
                              completed()
@@ -243,12 +242,38 @@ class CocktailsManager {
          }
      }
     
+    func toggleFavourite(drinkID : String) {
+        
+        print("in data provider")
+        if favourites.contains(where: {$0.idDrink == drinkID})
+        {
+            favourites = favourites.filter({
+                $0.idDrink != drinkID
+            })
+        }
+        else {
+
+            if let drink = self.drinks.filter({ $0.idDrink == drinkID}).first {
+                print("add")
+                favourites.append(drink)
+            }
+        }
+
+
+    }
+    
+    func isFav(drinkID : String) -> Bool {
+        return favourites.contains(where: {$0.idDrink == drinkID})
+    }
+    
 }
 
 //global variable for image cache
 var imageCache = NSCache<NSString, UIImage>()
 
-var favourites = [FavouriteItem]()
+var favourites = [Details]()
+
+
 
 
 extension UIImageView {
