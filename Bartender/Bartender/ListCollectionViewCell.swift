@@ -29,21 +29,7 @@ class ListCollectionViewCell: UICollectionViewCell {
     @IBAction func didTapOnButton(_ sender: UIButton) {
         favDelegate?.toggleFavourite(cellID: self.id)
     }
-    
-    
-    func setFavourite() {
-        
-        if(self._isFavourite == false) {
-            self._isFavourite = true
-            self.favouriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
 
-        } else {
-            self._isFavourite = false
-            self.favouriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
-            print(favourites)
-            
-        }
-    }
     
     
     func setupOutlets(drinkItem : Details?) {
