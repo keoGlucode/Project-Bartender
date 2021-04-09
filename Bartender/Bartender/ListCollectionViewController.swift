@@ -13,8 +13,9 @@ private let reuseIdentifier = "ListCollectionViewCell"
 
 class ListCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, favButtonDelegate {
     
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    var serviceCall = CocktailsManager()
+    //var serviceCall = CocktailsManager()
     var drinkItem = [Details]()
     
     var loadingViewController = LoadingViewController()
@@ -39,9 +40,9 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
         
         addLoadingIndicator()
         
-        self.performDrinksRequest(stringAppend: categoryItem, completed: removeLoadingIndicator )
+        //self.performDrinksRequest(stringAppend: categoryItem, completed: removeLoadingIndicator )
         
-        serviceCall.performDrinksRequest(stringAppend: categoryItem, completed: removeLoadingIndicator)
+        appDelegate.dataProvider.performDrinksRequest(stringAppend: categoryItem, completed: removeLoadingIndicator)
         
     }
     
@@ -75,22 +76,22 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return drinkItem.count > 0 ? drinkItem.count : 0
+        return appDelegate.dataProvider.drinks.count > 0 ?  appDelegate.dataProvider.drinks.count : 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ListCollectionViewCell
         
-        cell.setupOutlets(drinkItem: drinkItem[indexPath.row])
-        cell.favouriteButton.isSelected = serviceCall.isFav(drinkID: drinkItem[indexPath.row].idDrink)
+        cell.setupOutlets(drinkItem: appDelegate.dataProvider.drinks[indexPath.row])
+        cell.favouriteButton.isSelected = appDelegate.dataProvider.isFav(drinkID: appDelegate.dataProvider.drinks[indexPath.row].idDrink)
         
          cell.favDelegate = self
         return cell
     }
     
     func toggleFavourite(cellID : String)  {
-        print(favourites)
-        serviceCall.toggleFavourite(drinkID: cellID)
+        
+        appDelegate.dataProvider.toggleFavourite(drinkID: cellID)
         self.collectionView.reloadData()
     }
     
@@ -171,7 +172,7 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
         
         if let destination = segue.destination as? DrinkDetailsViewController {
             
-            let drink = drinkItem[( collectionView.indexPathsForSelectedItems![0].row)]
+            let drink = appDelegate.dataProvider.drinks[( collectionView.indexPathsForSelectedItems![0].row)]
             
             destination.drinkID = drink.idDrink
             destination.drink_Image = drink.strDrinkThumb
