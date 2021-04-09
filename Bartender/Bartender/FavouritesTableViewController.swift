@@ -88,15 +88,27 @@ class FavouritesTableViewController: UIViewController, UITableViewDelegate, UITa
         return true
     }
     */
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "drinkDetails", sender: self)
+    }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        if let destination = segue.destination as? DrinkDetailsViewController {
+            
+            let drink = appDelegate.dataProvider.drinks[( tableView.indexPathForSelectedRow)!.row]
+            
+            destination.drinkID = drink.idDrink
+            destination.drink_Image = drink.strDrinkThumb
+            destination.drinkName = drink.strDrink
+            destination.navigationItem.title = drink.strDrink
+        }
     }
-    */
+    
 
 }
