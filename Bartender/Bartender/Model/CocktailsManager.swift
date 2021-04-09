@@ -16,6 +16,8 @@ class CocktailsManager {
     
     var drinksDetails = [Drink]()
     
+    var favourites = [Details]()
+    
     func performCategoryRequest(completed: @escaping () -> () ) {
         
         let categoryURL = "https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list"
@@ -243,8 +245,7 @@ class CocktailsManager {
      }
     
     func toggleFavourite(drinkID : String) {
-        
-        print("in data provider")
+
         if favourites.contains(where: {$0.idDrink == drinkID})
         {
             favourites = favourites.filter({
@@ -254,7 +255,6 @@ class CocktailsManager {
         else {
 
             if let drink = self.drinks.filter({ $0.idDrink == drinkID}).first {
-                print("add")
                 favourites.append(drink)
             }
         }
@@ -271,7 +271,7 @@ class CocktailsManager {
 //global variable for image cache
 var imageCache = NSCache<NSString, UIImage>()
 
-var favourites = [Details]()
+
 
 
 
