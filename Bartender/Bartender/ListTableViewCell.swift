@@ -25,4 +25,11 @@ class ListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var listImage: UIImageView!
     
+    
+ 
+    func setOutlets(item : Details) {
+        listImage.loadImages(urlString: item.strDrinkThumb)
+        
+        listLabel.text = item.strDrink
+    }
 }
