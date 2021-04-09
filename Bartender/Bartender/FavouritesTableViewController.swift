@@ -8,39 +8,51 @@
 
 import UIKit
 
-class FavouritesTableViewController: UITableViewController {
+class FavouritesTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    @IBOutlet weak var tableView: UITableView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        //tableView.register(ListTableViewCell.self, forCellReuseIdentifier: "ListCell")
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
-
+/*
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+        return 1
+    }*/
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return appDelegate.dataProvider.favourites.count
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+    
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! ListTableViewCell
+        
+        let item = appDelegate.dataProvider.favourites[indexPath.row]
+        
+        cell.setOutlets(item: item)
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
