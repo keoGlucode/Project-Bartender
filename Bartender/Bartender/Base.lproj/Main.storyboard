@@ -311,6 +311,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="DY8-Sc-WTM"/>
+                    <connections>
+                        <segue destination="sH4-Ng-0MU" kind="show" identifier="drinkDetails" id="wOF-bX-xqd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DWJ-9W-T0t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
