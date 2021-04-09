@@ -71,6 +71,7 @@
                     <navigationItem key="navigationItem" id="Fkl-aM-6yi"/>
                     <connections>
                         <outlet property="tableView" destination="Ymi-9r-rbg" id="hu0-X0-hr2"/>
+                        <segue destination="sH4-Ng-0MU" kind="show" identifier="drinkDetails" id="xj0-4d-tnf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCk-11-LO3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -575,6 +576,9 @@
             <point key="canvasLocation" x="908" y="874.81259370314854"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="xj0-4d-tnf"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="doc.circle" catalog="system" width="128" height="121"/>
         <image name="hourglass" catalog="system" width="109" height="128"/>
