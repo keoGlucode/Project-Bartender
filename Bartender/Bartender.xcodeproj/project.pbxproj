@@ -24,6 +24,7 @@
 		29AD4FDD25FA5FD400E88D88 /* CocktailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AD4FDC25FA5FD400E88D88 /* CocktailData.swift */; };
 		29E5F3C1260B78D400F3E555 /* DrinkDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E5F3C0260B78D400F3E555 /* DrinkDetailsViewController.swift */; };
 		29E5F3C3260CD76000F3E555 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E5F3C2260CD76000F3E555 /* LoadingViewController.swift */; };
+		29E5F3C52620285600F3E555 /* FavouritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E5F3C42620285600F3E555 /* FavouritesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		29AD4FDC25FA5FD400E88D88 /* CocktailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailData.swift; sourceTree = "<group>"; };
 		29E5F3C0260B78D400F3E555 /* DrinkDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetailsViewController.swift; sourceTree = "<group>"; };
 		29E5F3C2260CD76000F3E555 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		29E5F3C42620285600F3E555 /* FavouritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				29AD03D425FF52B6005D915A /* CategoryTableViewCell.swift */,
 				29E5F3C0260B78D400F3E555 /* DrinkDetailsViewController.swift */,
 				29E5F3C2260CD76000F3E555 /* LoadingViewController.swift */,
+				29E5F3C42620285600F3E555 /* FavouritesTableViewController.swift */,
 			);
 			path = Bartender;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				295AEAEE25F7606F007569BC /* SceneDelegate.swift in Sources */,
 				29AD03D92602148E005D915A /* DrinkAttributesViewController.swift in Sources */,
 				29AD03D7260088BC005D915A /* CocktailsTableViewController.swift in Sources */,
+				29E5F3C52620285600F3E555 /* FavouritesTableViewController.swift in Sources */,
 				29AD03DF2609CD1A005D915A /* ListTableViewController.swift in Sources */,
 				29AD4FDD25FA5FD400E88D88 /* CocktailData.swift in Sources */,
 				29AD03D525FF52B6005D915A /* CategoryTableViewCell.swift in Sources */,

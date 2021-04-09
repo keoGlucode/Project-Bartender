@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Favourites Table View Controller-->
         <scene sceneID="uGC-Th-wZC">
             <objects>
-                <viewController id="PaO-MK-aHp" sceneMemberID="viewController">
+                <viewController id="PaO-MK-aHp" customClass="FavouritesTableViewController" customModule="Bartender" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UV1-xa-q1v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,6 +19,44 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ymi-9r-rbg">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListCell" rowHeight="131" id="xF1-Xa-98E" customClass="ListTableViewCell" customModule="Bartender" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="131"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xF1-Xa-98E" id="A8l-6K-n40">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="131"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kkj-fA-YkC">
+                                                    <rect key="frame" x="12" y="7" width="100" height="103.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" priority="750" constant="150" id="ARJ-WH-dv4"/>
+                                                        <constraint firstAttribute="width" constant="100" id="DSU-h5-vc5"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label2" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQX-Tp-LIW">
+                                                    <rect key="frame" x="177" y="48.5" width="54" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gQX-Tp-LIW" secondAttribute="trailing" constant="20" symbolic="YES" id="D3l-yq-Ex5"/>
+                                                <constraint firstItem="kkj-fA-YkC" firstAttribute="leading" secondItem="A8l-6K-n40" secondAttribute="leading" constant="12" id="GtS-o2-Uza"/>
+                                                <constraint firstItem="gQX-Tp-LIW" firstAttribute="centerY" secondItem="kkj-fA-YkC" secondAttribute="centerY" id="Ize-8X-Th3"/>
+                                                <constraint firstItem="gQX-Tp-LIW" firstAttribute="leading" secondItem="kkj-fA-YkC" secondAttribute="trailing" constant="65" id="Qj8-hN-9GK"/>
+                                                <constraint firstItem="kkj-fA-YkC" firstAttribute="top" secondItem="A8l-6K-n40" secondAttribute="top" constant="6.5" id="UlB-NY-por"/>
+                                                <constraint firstItem="gQX-Tp-LIW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="A8l-6K-n40" secondAttribute="topMargin" constant="5" id="dPf-vQ-qit"/>
+                                                <constraint firstAttribute="bottom" secondItem="kkj-fA-YkC" secondAttribute="bottom" constant="20" id="nrJ-6n-z9V"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="listImage" destination="kkj-fA-YkC" id="7zG-EE-wZK"/>
+                                            <outlet property="listLabel" destination="gQX-Tp-LIW" id="fMc-GN-hKg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -31,10 +69,13 @@
                         <viewLayoutGuide key="safeArea" id="Jfg-VP-IjR"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="OlI-CX-ZYS"/>
+                    <connections>
+                        <outlet property="tableView" destination="Ymi-9r-rbg" id="hu0-X0-hr2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCk-11-LO3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="908" y="875"/>
+            <point key="canvasLocation" x="908" y="874.81259370314854"/>
         </scene>
         <!--Cocktails Table View Controller-->
         <scene sceneID="ESW-PJ-UrH">
@@ -65,9 +106,6 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="g2t-jD-v8h" kind="show" identifier="viewDrinksDetails" id="oNR-Xt-Ge1"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -93,7 +131,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hourglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BjO-BH-k5h">
-                                <rect key="frame" x="67" y="65" width="241" height="307.5"/>
+                                <rect key="frame" x="67" y="21" width="241" height="351.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="1PQ-Kb-X9N"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="chg-JA-K1W"/>
@@ -107,7 +145,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8S6-Qx-RhU">
-                                <rect key="frame" x="67" y="476" width="240" height="55"/>
+                                <rect key="frame" x="67" y="476" width="240" height="104"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -136,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ToK-IG-4vg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2196" y="1773"/>
+            <point key="canvasLocation" x="1564" y="2651"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="MHX-Kk-04u">
@@ -215,7 +253,6 @@
                     <navigationItem key="navigationItem" title="Categories" id="fen-EV-Tc5"/>
                     <connections>
                         <segue destination="Ibg-zA-UgA" kind="show" identifier="showDrinks" id="rGx-7a-log"/>
-                        <segue destination="1Hn-ce-F8P" kind="show" identifier="listDrinks" id="QxO-1P-oI1"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fxf-Kr-soq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -276,7 +313,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DWJ-9W-T0t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3121" y="1773"/>
+            <point key="canvasLocation" x="2196" y="1773"/>
         </scene>
         <!--List Collection View Controller-->
         <scene sceneID="eej-Wi-uAY">
@@ -352,7 +389,6 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="2bu-JX-EIb"/>
                     <connections>
-                        <segue destination="g2t-jD-v8h" kind="show" identifier="viewAttributes" id="1MB-kE-mlC"/>
                         <segue destination="sH4-Ng-0MU" kind="show" identifier="drinkDetails" id="NdG-81-wtZ"/>
                     </connections>
                 </collectionViewController>
@@ -501,11 +537,8 @@
             <point key="canvasLocation" x="-1058" y="875"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="6vi-uz-Uh8"/>
-        <segue reference="1MB-kE-mlC"/>
-    </inferredMetricsTieBreakers>
     <resources>
+        <image name="doc.circle" catalog="system" width="128" height="121"/>
         <image name="hourglass" catalog="system" width="109" height="128"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
