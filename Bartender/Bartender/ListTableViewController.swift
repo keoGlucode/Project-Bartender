@@ -66,6 +66,23 @@ class ListTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "drinkDetails", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let destination = segue.destination as? DrinkDetailsViewController {
+            
+            let drink = dataProvider.drinks[( tableView.indexPathForSelectedRow)!.row]
+            
+            destination.drinkID = drink.idDrink
+            destination.drink_Image = drink.strDrinkThumb
+            destination.drinkName = drink.strDrink
+            destination.navigationItem.title = drink.strDrink
+        }
+    }
+    
     func addLoadingIndicator() {
         addChild(loadingViewController)
         loadingViewController.view.frame = view.frame
