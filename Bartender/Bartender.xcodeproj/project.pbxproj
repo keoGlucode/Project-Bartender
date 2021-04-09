@@ -25,6 +25,7 @@
 		29E5F3C1260B78D400F3E555 /* DrinkDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E5F3C0260B78D400F3E555 /* DrinkDetailsViewController.swift */; };
 		29E5F3C3260CD76000F3E555 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E5F3C2260CD76000F3E555 /* LoadingViewController.swift */; };
 		29E5F3C52620285600F3E555 /* FavouritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E5F3C42620285600F3E555 /* FavouritesTableViewController.swift */; };
+		29E5F3C726206C1800F3E555 /* Favourites.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29E5F3C626206C1800F3E555 /* Favourites.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		29E5F3C0260B78D400F3E555 /* DrinkDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDetailsViewController.swift; sourceTree = "<group>"; };
 		29E5F3C2260CD76000F3E555 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		29E5F3C42620285600F3E555 /* FavouritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesTableViewController.swift; sourceTree = "<group>"; };
+		29E5F3C626206C1800F3E555 /* Favourites.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Favourites.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				29AD4FD725FA249400E88D88 /* Model */,
 				29AD4FD925FA24F800E88D88 /* Controllers */,
 				295AEAF125F7606F007569BC /* Main.storyboard */,
+				29E5F3C626206C1800F3E555 /* Favourites.plist */,
 				29AD03DE2609CD19005D915A /* ListTableViewController.swift */,
 				29AD03E02609CFDB005D915A /* ListTableViewCell.swift */,
 				29AD03DC26046811005D915A /* ListCollectionViewController.swift */,
@@ -187,6 +190,7 @@
 			files = (
 				295AEAF825F76071007569BC /* LaunchScreen.storyboard in Resources */,
 				295AEAF525F76071007569BC /* Assets.xcassets in Resources */,
+				29E5F3C726206C1800F3E555 /* Favourites.plist in Resources */,
 				295AEAF325F7606F007569BC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
