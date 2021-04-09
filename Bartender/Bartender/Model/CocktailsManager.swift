@@ -266,6 +266,18 @@ class CocktailsManager {
         return favourites.contains(where: {$0.idDrink == drinkID})
     }
     
+    func getPList() {
+        print("in plist")
+        if let path = Bundle.main.path(forResource: "Favourites", ofType: "plist"),
+            let xml = FileManager.default.contents(atPath: path),
+            let favorites = try? PropertyListDecoder().decode(Details.self, from: xml)
+        {
+            print(favorites)
+        } else {
+            print("Error cannot decode")
+        }
+    }
+    
 }
 
 //global variable for image cache
