@@ -23,10 +23,14 @@ class FavouritesTableViewController: UIViewController, UITableViewDelegate, UITa
         tableView.delegate = self
         tableView.dataSource = self
         
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         tableView.reloadData()
     }
 
@@ -101,7 +105,7 @@ class FavouritesTableViewController: UIViewController, UITableViewDelegate, UITa
         
         if let destination = segue.destination as? DrinkDetailsViewController {
             
-            let drink = appDelegate.dataProvider.drinks[( tableView.indexPathForSelectedRow)!.row]
+            let drink = appDelegate.dataProvider.favourites[( tableView.indexPathForSelectedRow)!.row]
             
             destination.drinkID = drink.idDrink
             destination.drink_Image = drink.strDrinkThumb
