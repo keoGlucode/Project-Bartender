@@ -10,6 +10,8 @@ import UIKit
 
 class CocktailsManager {
     
+    let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("Favourites.plist")
+    
     var categories = [Category]()
     
     var drinks = [Details]()
@@ -228,7 +230,6 @@ class CocktailsManager {
                          let det = try JSONDecoder().decode(CocktailDetails.self, from: safeData)
                          
                          self.drinks = det.drinks
-                         //print(self.drinks)
                          
                          DispatchQueue.main.async {
                              completed()
@@ -251,12 +252,13 @@ class CocktailsManager {
             favourites = favourites.filter({
                 $0.idDrink != drinkID
             })
+            setPList()
         }
         else {
 
             if let drink = self.drinks.filter({ $0.idDrink == drinkID}).first {
                 favourites.append(drink)
-            }
+                setPList()            }
         }
 
 
@@ -267,14 +269,52 @@ class CocktailsManager {
     }
     
     func getPList() {
-        print("in plist")
-        if let path = Bundle.main.path(forResource: "Favourites", ofType: "plist"),
-            let xml = FileManager.default.contents(atPath: path),
-            let favorites = try? PropertyListDecoder().decode(Details.self, from: xml)
-        {
-            print(favorites)
+        
+        //if let path = path.absoluteString,
+        if let xml = FileManager.default.contents(atPath: path.path) {
+            if let favorites = try? PropertyListDecoder().decode([Details].self, from: xml) {
+                favourites = favorites
+            } else {
+                print("ERROR decoding")
+            }
+            
         } else {
-            print("Error cannot decode")
+            print("ERROR xml path")
+        }
+        
+//        {
+//            print(favorites)
+//        } else {
+//            print("Error cannot decode")
+//        }
+    }
+    
+    func writeToFile(fileName: String, object: [Details]) {
+        let plistEncoder = PropertyListEncoder()
+        if let encodedNote = try? plistEncoder.encode(object) {
+            print(encodedNote)
+            let documentsDirectory =
+               FileManager.default.urls(for: .documentDirectory,
+               in: .userDomainMask).first!
+            let archiveURL =
+               documentsDirectory.appendingPathComponent(fileName)
+            .  appendingPathExtension("plist")
+            try? encodedNote.write(to: archiveURL, options: .noFileProtection)
+            
+            print(archiveURL)
+        }
+    }
+    
+    
+    func setPList() {
+        let encoder = PropertyListEncoder()
+        encoder.outputFormat = .xml
+
+        do {
+            let data = try encoder.encode(favourites)
+            try data.write(to: path)
+        } catch {
+            print(error)
         }
     }
     
