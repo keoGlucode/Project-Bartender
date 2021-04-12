@@ -14,6 +14,8 @@ class CategoryTableViewController: UITableViewController {
     
     let loadingViewController = LoadingViewController()
     
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,7 +24,7 @@ class CategoryTableViewController: UITableViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        
+        appDelegate.dataProvider.getPList()
     }
 
 
