@@ -412,7 +412,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HoB-6x-yTI">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="629"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Idy-rv-wIZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
@@ -473,25 +473,41 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PM5-LE-yZl">
+                                                <rect key="frame" x="20" y="619" width="335" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Share ">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="didTapShareButton:" destination="sH4-Ng-0MU" eventType="touchUpInside" id="NzV-7E-I0a"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="PM5-LE-yZl" secondAttribute="trailing" constant="20" id="3Ra-Pf-O1j"/>
                                             <constraint firstItem="Idy-rv-wIZ" firstAttribute="top" secondItem="HoB-6x-yTI" secondAttribute="top" id="8ID-t3-lLm"/>
                                             <constraint firstItem="Idy-rv-wIZ" firstAttribute="centerX" secondItem="HoB-6x-yTI" secondAttribute="centerX" id="Gww-zp-2fP"/>
                                             <constraint firstItem="zH2-cf-J5Q" firstAttribute="leading" secondItem="HoB-6x-yTI" secondAttribute="leading" constant="20" id="HFW-ih-uma"/>
                                             <constraint firstAttribute="trailing" secondItem="zH2-cf-J5Q" secondAttribute="trailing" constant="20" id="ILe-bs-jzU"/>
+                                            <constraint firstItem="PM5-LE-yZl" firstAttribute="top" secondItem="zH2-cf-J5Q" secondAttribute="bottom" constant="10" id="WG6-W1-m83"/>
                                             <constraint firstItem="zH2-cf-J5Q" firstAttribute="top" secondItem="Idy-rv-wIZ" secondAttribute="bottom" constant="20" id="Xnn-mB-ebt"/>
+                                            <constraint firstItem="PM5-LE-yZl" firstAttribute="leading" secondItem="HoB-6x-yTI" secondAttribute="leading" constant="20" id="eeh-XS-8X1"/>
                                             <constraint firstItem="Idy-rv-wIZ" firstAttribute="leading" secondItem="HoB-6x-yTI" secondAttribute="leading" id="hmU-zI-peB"/>
                                             <constraint firstItem="zH2-cf-J5Q" firstAttribute="centerX" secondItem="HoB-6x-yTI" secondAttribute="centerX" id="krZ-zu-grV"/>
                                             <constraint firstAttribute="trailing" secondItem="Idy-rv-wIZ" secondAttribute="trailing" id="uvO-g9-Zdh"/>
-                                            <constraint firstAttribute="bottom" secondItem="zH2-cf-J5Q" secondAttribute="bottom" constant="20" id="yzk-fE-Of8"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="PM5-LE-yZl" secondAttribute="bottom" constant="10" id="vMH-NJ-eAQ"/>
+                                            <constraint firstAttribute="height" constant="800" id="yef-dn-iJg"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="HoB-6x-yTI" firstAttribute="top" secondItem="LcX-Dh-m7N" secondAttribute="top" id="981-Ko-1LV"/>
                                     <constraint firstItem="HoB-6x-yTI" firstAttribute="leading" secondItem="Izy-dv-jwu" secondAttribute="leading" id="NBD-zj-8FF"/>
+                                    <constraint firstAttribute="bottom" secondItem="HoB-6x-yTI" secondAttribute="bottom" constant="-10" id="UVk-XE-biW"/>
                                     <constraint firstAttribute="trailing" secondItem="HoB-6x-yTI" secondAttribute="trailing" id="arE-qU-buZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="HoB-6x-yTI" secondAttribute="bottom" constant="-10" id="e4X-cE-Apz"/>
                                     <constraint firstItem="HoB-6x-yTI" firstAttribute="width" secondItem="Izy-dv-jwu" secondAttribute="width" id="fr7-aT-LjD"/>
                                     <constraint firstItem="HoB-6x-yTI" firstAttribute="height" secondItem="LcX-Dh-m7N" secondAttribute="height" priority="250" id="mhg-cz-HE3"/>
                                 </constraints>
@@ -519,7 +535,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iCS-PS-hbi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="908" y="2651"/>
+            <point key="canvasLocation" x="908" y="2650.5247376311845"/>
         </scene>
         <!--Categories-->
         <scene sceneID="YzT-Fk-WR7">
