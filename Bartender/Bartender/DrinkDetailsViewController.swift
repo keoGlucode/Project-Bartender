@@ -15,6 +15,12 @@ class DrinkDetailsViewController: UIViewController {
     @IBOutlet weak var glassLabel: UILabel!
     @IBOutlet weak var instructionsLabel: UILabel!
     
+    @IBAction func didTapShareButton(_ sender: UIButton) {
+        
+        presentShareSheet()
+        print("Tapped button")
+        
+    }
     
     var serviceCall = CocktailsManager()
     var drinkID = ""
@@ -55,6 +61,13 @@ class DrinkDetailsViewController: UIViewController {
         self.loadingViewController.willMove(toParent: nil)
         self.loadingViewController.view.removeFromSuperview()
         self.loadingViewController.removeFromParent()
+    }
+    
+    func presentShareSheet() {
+        let shareSheet = UIActivityViewController(activityItems: [instructionsLabel.text!], applicationActivities: nil)
+        
+        present(shareSheet, animated: true)
+        
     }
 
     /*
